@@ -32,7 +32,9 @@ function App() {
           <span className='font-[600] text-[14px] block w-full ml-[46%]'>Menu</span>
           <button className='p-4 hover:opacity-70 text-[20px]' onClick={() => setIsShowMenu(false)}><i className="fa fa-close" aria-hidden="true"></i></button>
         </div>
-        <h3 className='text-center font-bold text-white text-[24px] relative w-full'>Luong</h3>
+        <h3 className='text-center font-bold text-white text-[24px] relative w-full'>
+          <span className='border-b-4 border-[#f47e23]'>Luong</span>
+        </h3>
         <ul className='text-center text-white font-medium text-[24px] mt-7'>
           <li className='inline-block'>
             <a href='/'>Home</a>
@@ -320,7 +322,7 @@ function App() {
             <input className='my-4 p-4' type="checkbox" name="_captcha" value="false" /> <span className='font-mono text-white'>I'm not a robot</span>
             <input type="hidden" name="_subject" value="New submission!" />
             <input type="hidden" name="_blacklist" value="spammy pattern, banned term, phrase" />
-            <input type="hidden" name="_next" value="http://localhost:3000/" />
+            <input type="hidden" name="_next" value="https://vanluong.vercel.app" />
             <button className='block w-full p-2 text-white font-mono text-[20px] bg-[#f47e23]' type='submit'>
               <span><i className="fa fa-send mr-3" aria-hidden="true"></i></span>
               Send</button>
