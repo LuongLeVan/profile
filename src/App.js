@@ -107,7 +107,7 @@ function App() {
         <div className='md:w-[50%]'>
           <h2 className="text-center font-semibold font-mono text-[32px] mt-[-30px] md:mt-[70px] md:hidden">Van Luong</h2>
           <div className='flex justify-center'>
-            <div className='text-[20px] absolute left-[15%] top-[20%] md:left-[55%]'>
+            <div className='text-[20px] absolute left-[6%] top-[20%] md:left-[55%]'>
               <a href='https://www.facebook.com/always.green.09' target='_blank' className='w-[40px] md:w-[60px] md:h-[60px] block hover:opacity-80 h-[40px] rounded-full text-center bg-[#f47e23] '><i className="fa-brands fa-facebook mt-3 md:mt-5 md:text-[24px] text-white" aria-hidden="true"></i></a>
               <a href='https://www.intagram.com/toilaeddie/' target='_blank' className='w-[40px] md:w-[60px] md:h-[60px] block hover:opacity-80 h-[40px] rounded-full text-center bg-[#f47e23]  my-2'><i className="fa-brands fa-instagram mt-3 text-white md:mt-5 md:text-[24px]" aria-hidden="true"></i></a>
               <a href='https://github.csom/LuongLeVan' target='_blank' className='w-[40px] md:w-[60px] md:h-[60px] block hover:opacity-80 h-[40px] rounded-full text-center bg-[#f47e23] '><i className="fa-brands fa-github text-white md:mt-4 md:text-[24px]" aria-hidden="true"></i></a>
@@ -115,13 +115,13 @@ function App() {
             <img src={image} className='w-[220px] mt-4 mx-auto relative z-10 md:w-[320px]' alt="image" />
 
 
-            <div className={isDarkMode ? 'border-4 border-l-0 border-white w-[180px] right-[22%] top-[22%] h-[290px] absolute md:h-[420px]  md:right-[17%]' : 'border-4 border-l-0 border-black w-[180px] right-[22%] top-[22%] h-[290px] md:h-[420px]  md:right-[17%] absolute'}></div>
+            <div className={isDarkMode ? 'border-4 border-l-0 border-white w-[180px] right-[15%] top-[21%] h-[290px] absolute md:h-[420px]  md:right-[17%]' : 'border-4 border-l-0 border-black w-[180px] right-[15%] top-[21%] h-[290px] md:h-[420px]  md:right-[17%] absolute'}></div>
           </div>
         </div>
         <div className='md:w-[50%]'>
           <p className='text-center font-medium font-mono p-6'>
             <h2 className="text-center font-semibold font-mono text-[32px] mt-[70px] hidden md:block">Van Luong</h2>
-            <p className='md:text-[22px]'><span className='font-[900] md:text-[22px] text-[16px] bg-[#f47e23] text-white'>Frontend Developer</span>, with knowledge in web development and design, I offer the best projects resulting in quality work.</p>
+            <p className='md:text-[22px] mt-4'><span className='font-[900] md:text-[22px] text-[16px] bg-[#f47e23] text-white'>Frontend Developer</span>, with knowledge in web development and design, I offer the best projects resulting in quality work.</p>
           </p>
         </div>
       </div>
@@ -153,7 +153,7 @@ function App() {
       <div id='tech' className={isDarkMode ? 'min-h-[650px] bg-black ' : 'min-h-[650px] bg-gray-300'}>
         <h2 className={isDarkMode ? "text-center  text-white font-semibold font-mono text-[32px] pt-6 md:text-[48px]" : "text-center  text-black font-semibold font-mono text-[32px] pt-6 md:text-[48px]"}>Technologies</h2>
         <div className='md:flex md:p-11'>
-          <div className='border-4 fe w-[80%] mx-auto mt-3 md:mr-11'>
+          <div className='border-4 fe w-full mx-auto mt-3 md:mr-11'>
             <h5 className={isDarkMode ? 'text-white text-center p-4 font-mono text-[24px]' : 'text-black text-center p-4 font-mono text-[24px]'}>
               <div className='scroll-left'></div>
               Front end
@@ -172,7 +172,7 @@ function App() {
               <div className='item'><i className="fa fa-check mr-3" aria-hidden="true"></i>TypeScript
                 <div className='scroll'></div>
               </div>
-              <div className='item'><i className="fa fa-check mr-3" aria-hidden="true"></i>TailwindCss
+              <div className='item'><i className="fa fa-check mr-3" aria-hidden="true"></i>Tailwind
                 <div className='scroll'></div>
               </div>
               <div className='item'><i className="fa fa-check mr-3" aria-hidden="true"></i>ReactJs
@@ -186,7 +186,7 @@ function App() {
               </div>
             </div>
           </div>
-          <div className='border-4 fe w-[80%] mx-auto mt-3'>
+          <div className='border-4 fe w-full mx-auto mt-3'>
             <h5 className={isDarkMode ? 'text-white text-center p-4 font-mono text-[24px]' : 'text-black text-center p-4 font-mono text-[24px]'}>
               <div className='scroll-left'></div>
               Back end
