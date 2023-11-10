@@ -7,12 +7,23 @@
     
         content: "";
         width: 20px;
-        height: 1px;
+        height: 2px;
         background-color: white;
         position: absolute;
         top: 50%;
-        left: 0;
+        left: -34%;
       
+}
+.line::after{
+    
+    content: "";
+    width: 20px;
+    height: 2px;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: -3%;
+  
 }
   
 li:hover .scroll{
