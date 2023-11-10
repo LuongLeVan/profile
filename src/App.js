@@ -9,6 +9,15 @@ import pj2 from './images/pj2.jpg';
 import pj3 from './images/pj3.jpg';
 import pj4 from './images/pj4.jpg';
 import pj5 from './images/pj5.jpg';
+import facebook from './images/facebook.png';
+import instagram from './images/instagram.png';
+import github from './images/github (1).png';
+import arrow from './images/swirly-scribbled-arrow-svgrepo-com.svg'
+import snow from './images/snow-crystal-2-svgrepo-com.svg'
+import snowman from './images/snowman-9-svgrepo-com.svg'
+import santa from './images/santa-and-reindeer-on-a-sleigh-svgrepo-com.svg'
+import tree from './images/christmas-tree-svgrepo-com.svg'
+
 
 import './App.css';
 
@@ -68,7 +77,7 @@ function App() {
         <span><i className="fa fa-arrow-up" aria-hidden="true"></i></span>
       </button>
       {/* Header */}
-      <div className={isDarkMode ? 'flex items-center justify-between shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)] fixed z-20 top-0 left-0 px-11 md:py-4 md:px-36 right-0 bg-black py-4' : 'flex items-center justify-between py-4 px-11 md:px-36 shadow-2xl bg-[#dedede] fixed z-20 top-0 left-0 right-0'}>
+      <div className={isDarkMode ? 'flex items-center justify-between shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)] fixed z-20 top-0 left-0 px-11 md:py-4 md:px-36 right-0 star py-4' : 'flex items-center justify-between py-4 px-11 md:px-36 shadow-2xl bg-[#dedede] fixed z-20 top-0 left-0 right-0'}>
         <div className="flex items-center">
           <span className="text-white rounded-[50%] px-4 py-2 bg-black">L</span>
           <p className={isDarkMode ? "font-[600] font-mono mx-2 text-white" : "font-[600] font-mono mx-2 text-black"}>Van Luong</p>
@@ -105,30 +114,44 @@ function App() {
         </div>
       </div>
       {/* Header */}
-      <div className={isDarkMode ? 'bg-black md:flex  md:flex-row-reverse md:px-36  py-[110px]' : 'bg-[#dedede] md:flex  md:flex-row-reverse md:px-36  md:py-[100px] py-[110px]'}>
+      <div className={isDarkMode ? 'star md:flex  md:flex-row-reverse md:px-36  pt-[110px] pb-[15px]' : 'bg-[#dedede] md:flex  md:flex-row-reverse md:px-36  md:pt-[100px] pb-[15px] py-[110px]'}>
         <div className='md:w-[50%]'>
           <h2 className="text-center font-semibold font-mono text-[32px] mt-[-30px] md:mt-[70px] md:hidden">Van Luong</h2>
           <div className='flex justify-center'>
-            <div className='text-[20px] absolute left-[6%] top-[20%] md:left-[55%]'>
-              <a href='https://www.facebook.com/always.green.09' target='_blank' className='w-[40px] md:w-[60px] md:h-[60px] block hover:opacity-80 h-[40px] rounded-full text-center bg-[#f47e23] '><i className="fa-brands fa-facebook mt-3 md:mt-5 md:text-[24px] text-white" aria-hidden="true"></i></a>
-              <a href='https://www.intagram.com/toilaeddie/' target='_blank' className='w-[40px] md:w-[60px] md:h-[60px] block hover:opacity-80 h-[40px] rounded-full text-center bg-[#f47e23]  my-2'><i className="fa-brands fa-instagram mt-3 text-white md:mt-5 md:text-[24px]" aria-hidden="true"></i></a>
-              <a href='https://github.csom/LuongLeVan' target='_blank' className='w-[40px] md:w-[60px] md:h-[60px] block hover:opacity-80 h-[40px] rounded-full text-center bg-[#f47e23] '><i className="fa-brands fa-github text-white md:mt-4 md:text-[24px]" aria-hidden="true"></i></a>
+            <div className='text-[20px] absolute left-[6%] top-[20%] md:left-[56%]'>
+              <a href='https://www.facebook.com/always.green.09' target='_blank' className='w-[40px] md:w-[40px] md:h-[40px] block hover:opacity-80 h-[40px] rounded-full text-center '>
+                <img src={facebook} alt="facebook"/>
+              </a>
+              <a href='https://www.intagram.com/toilaeddie/' target='_blank' className='w-[40px] md:w-[40px] md:h-[40px] block hover:opacity-80 h-[40px] rounded-full text-center  my-2'>
+              <img src={instagram} alt="instagram"/>
+                
+              </a>
+              <a href='https://github.csom/LuongLeVan' target='_blank' className='w-[40px] md:w-[40px] md:h-[40px] block hover:opacity-80 h-[40px] rounded-full text-center '>
+              <img src={github} alt="github"/>
+
+              </a>
             </div>
-            <img src={image} className='w-[220px] mt-4 mx-auto relative z-10 md:w-[320px]' alt="image" />
+            <img src={image} className='w-[220px] mt-4 mx-auto  relative z-10 md:w-[320px]' alt="image" />
+            <img src={snow} className='w-[50px] snow md:hidden absolute mx-auto z-10 md:w-[20px]' alt="snow" />
 
 
             <div className={isDarkMode ? 'border-4 border-l-0 border-white w-[180px] right-[15%] top-[21%] h-[290px] absolute md:h-[420px]  md:right-[17%]' : 'border-4 border-l-0 border-black w-[180px] right-[15%] top-[21%] h-[290px] md:h-[420px]  md:right-[17%] absolute'}></div>
           </div>
         </div>
-        <div className='md:w-[50%]'>
+        <div className='md:w-[50%] relative'>
+        <img src={arrow} className='w-[50px] arrow absolute mx-auto md:hidden z-10 md:w-[20px]' alt="arrow" />
+        <img src={snowman} className='w-[50px] md:hidden snowman absolute mx-auto z-10 md:w-[20px]' alt="snowman" />
           <p className='text-center font-medium font-mono p-6'>
             <h2 className="text-center font-semibold font-mono text-[32px] mt-[70px] hidden md:block">Van Luong</h2>
             <p className='md:text-[22px] mt-4'><span className='font-[900] md:text-[22px] text-[16px] bg-[#f47e23] text-white'>Frontend Developer</span>, with knowledge in web development and design, I offer the best projects resulting in quality work.</p>
           </p>
         </div>
+        
+        {/* <img className='w-[100px] ml-[40%] md:hidden tree' src={tree} alt="tree"/>
+        <img className='w-[100px] absolute right-0 md:hidden santa' src={santa} alt="santa"/> */}
       </div>
       {/* Start About me */}
-      <div id='about' className={isDarkMode ? 'bg-black min-h-[600px] test text-white pb-6 pt-[6%]' : 'pb-6 pt-[6%] bg-gray-600 min-h-[600px] text-white'}>
+      <div id='about' className={isDarkMode ? 'star min-h-[600px] test text-white pb-6 pt-[6%]' : 'pb-6 pt-[6%] bg-gray-600 min-h-[600px] text-white'}>
         <h2 className="text-center font-semibold font-mono text-[32px] pt-6 md:hidden">About Me</h2>
         <div className='md:flex md:items-center'>
           <img src={avt} className='w-[360px] m-12 md:h-[370px] md:w-[440px] border-8  mx-auto' alt="image" />
@@ -152,7 +175,7 @@ function App() {
 
       {/* SKILL */}
 
-      <div id='tech' className={isDarkMode ? 'min-h-[650px] bg-black ' : 'min-h-[650px] bg-gray-300'}>
+      <div id='tech' className={isDarkMode ? 'min-h-[650px] star ' : 'min-h-[650px] bg-gray-300'}>
         <h2 className={isDarkMode ? "text-center  text-white font-semibold font-mono text-[32px] pt-6 md:text-[48px]" : "text-center  text-black font-semibold font-mono text-[32px] pt-6 md:text-[48px]"}>Technologies</h2>
         <div className='md:flex md:p-11'>
           <div className='border-4 fe w-full mx-auto mt-3 md:mr-11'>
@@ -212,8 +235,8 @@ function App() {
       </div>
 
       {/* SKILL */}
-      <div className='h-[5px] bg-black'></div>
-      <div className={isDarkMode ? 'bg-black min-h[1200px] pb-8 md:flex md:pt-11 md:justify-center' : 'bg-gray-300 min-h[1200px] pb-8 md:flex md:pt-11 md:justify-center'}>
+{/*       <div className='h-[5px] bg-black'></div>
+ */}      <div className={isDarkMode ? 'star min-h[1200px] pb-8 md:flex md:pt-11 md:justify-center' : 'bg-gray-300 min-h[1200px] pb-8 md:flex md:pt-11 md:justify-center'}>
         <div className='md:w-[30%] md:px-6'>
           <h2 className="text-center font-semibold font-mono text-[32px] pt-6">
             <i className="fa fa-spotify mr-3 text-green-800" aria-hidden="true"></i>
@@ -229,7 +252,7 @@ function App() {
       </div>
 
       {/*Start Project */}
-      <div id='projects' className={isDarkMode ? 'bg-black min-h-[600px]' : 'bg-[#d4d4d4] min-h-[600px]'}>
+      <div id='projects' className={isDarkMode ? 'star min-h-[600px]' : 'bg-[#d4d4d4] min-h-[600px]'}>
         <h2 className={isDarkMode ? "text-center font-semibold font-mono text-[32px] md:text-[48px] text-white pt-6" : "text-center md:text-[48px] font-semibold font-mono text-[32px] text-black pt-6"}>Projects</h2>
         <div className='md:grid md:grid-cols-3 md:text-[20px] '>
           <div className={isDarkMode ? 'pt-8 p-4 m-4' : 'pt-8 text-black  p-4 m-4'}>
@@ -303,9 +326,9 @@ function App() {
       {/*End Project */}
 
       {/* Contact */}
-      <div className={isDarkMode ? 'h-[3px] bg-white' : 'h-[5px] bg-black'}></div>
-
-      <div id='contact' className={isDarkMode ? 'bg-black p-6 min-h-[300px] md:flex md:px-36' : 'bg-black test p-6 min-h-[300px] md:flex md:px-36'}>
+{/*       <div className={isDarkMode ? 'h-[3px] bg-white' : 'h-[5px] bg-black'}></div>
+ */}
+      <div id='contact' className={isDarkMode ? 'star p-6 min-h-[300px] md:flex md:px-36' : 'bg-black test p-6 min-h-[300px] md:flex md:px-36'}>
         <div className='md:w-[50%]'>
           <h2 className={isDarkMode ? "text-center font-semibold font-mono text-[32px] text-white pt-6 md:text-[48px]" : "text-center font-semibold font-mono text-[32px] text-white mb-4 md:text-[48px]"}>Contact Me</h2>
           <p className='text-white text-center font-mono text-[14px] mb-4 md:px-11 md:text-[20px]'>
@@ -333,7 +356,7 @@ function App() {
       {/* Contact */}
 
       {/* Footer */}
-      <div className='bg-black text-white min-h-[150px] shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)] md:flex md:items-center md:flex-row-reverse	md:justify-between md:px-36'>
+      <div className={isDarkMode ? 'star text-white min-h-[150px] shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)] md:flex md:items-center md:flex-row-reverse	md:justify-between md:px-36' : 'bg-black text-white min-h-[150px] shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)] md:flex md:items-center md:flex-row-reverse	md:justify-between md:px-36' }>
         <ul className='flex items-center justify-center pt-12 md:pt-[24px] text-[18px] font-mono'>
           <li className='hover:opacity-70'><a href='#about'>About Me</a></li>
           <li className='mx-6 hover:opacity-70'><a href='#tech'>Technologies</a></li>

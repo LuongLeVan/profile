@@ -62,3 +62,22 @@ li:hover .scroll{
     width: 20%;
 
 }
+.star{
+background-color: black;}
+.arrow{
+    transform: rotate(200deg);
+    margin-left: 30%;
+    margin-top: -2%;
+}
+.snow{
+    margin-top: -4%;
+    margin-left:60%;
+}
+.snowman{
+    margin-top: -4%;
+    margin-left:5%;
+}
+.santa{
+    transform: rotate(10deg);
+
+}
