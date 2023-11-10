@@ -1,23 +1,358 @@
-import logo from './logo.svg';
+import { useEffect, useState } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+import image from './images/image.jpg';
+import avt from './images/avt.jpg';
+import pj1 from './images/pj1.jpg';
+import pj2 from './images/pj2.jpg';
+import pj3 from './images/pj3.jpg';
+import pj4 from './images/pj4.jpg';
+import pj5 from './images/pj5.jpg';
+
 import './App.css';
 
 function App() {
+  gsap.registerPlugin(ScrollTrigger);
+
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isShowMenu, setIsShowMenu] = useState(false);
+  useEffect(() => {
+    // Tạo animation với GSAP
+   
+    
+    // Cleanup effect
+  },);
+
+  const handleSmooth = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
+    <div className={isDarkMode ? 'bg-black text-white' : ''}>
+      {/* Menu Mobile */}
+      <div className={isShowMenu ? 'bg-black-rgba fixed top-0 left-0 right-0 h-[400px] z-50 font-mono hid' : 'bg-black-rgba fixed top-0 left-0 right-0 h-[400px] z-50 font-mono hidden'}>
+        <div className='font-mono flex justify-end items-center text-white'>
+          <span className='font-[600] text-[14px] block w-full ml-[46%]'>Menu</span>
+          <button className='p-4 hover:opacity-70 text-[20px]' onClick={() => setIsShowMenu(false)}><i className="fa fa-close" aria-hidden="true"></i></button>
+        </div>
+        <h3 className='text-center font-bold text-white text-[24px] relative w-full'>Luong</h3>
+        <ul className='text-center text-white font-medium text-[24px] mt-7'>
+          <li className='inline-block'>
+            <a href='/'>Home</a>
+            <div className='scroll'></div>
+          </li>
+          <div>
+            <li className='my-4 inline-block'>
+              <a href='#about'>About Me</a>
+              <div className='scroll'></div>
+            </li>
+          </div>
+          <div>
+            <li className='inline-block'>
+              <a href='#projects'>Projects</a>
+              <div className='scroll'></div>
+            </li>
+          </div>
+          <div>
+            <li className='my-4 inline-block'>
+              <a href='#contact'>Contact Me</a>
+              <div className='scroll'></div>
+            </li>
+          </div>
+        </ul>
+      </div>
+      {/* Menu Mobile */}
+
+     
+
+      <button className='text-white bg-[#f47e23] rounded-full px-3 py-2 fixed bottom-4 right-4 hover:opacity-70' onClick={handleSmooth}>
+        <span><i className="fa fa-arrow-up" aria-hidden="true"></i></span>
+      </button>
+      {/* Header */}
+      <div className={isDarkMode ? 'flex items-center justify-between shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)] fixed z-20 top-0 left-0 px-16 md:px-36 right-0 bg-black' : 'flex items-center justify-between py-4 px-16 md:px-36 shadow-2xl bg-[#dedede] fixed z-20 top-0 left-0 right-0'}>
+        <div className="flex items-center">
+          <span className="text-white rounded-[50%] px-4 py-2 bg-black">L</span>
+          <p className={isDarkMode ? "font-[600] font-mono mx-2 text-white" : "font-[600] font-mono mx-2 text-black"}>Van Luong</p>
+        </div>
+        {/* MENU PC */}
+            <div className='text-center text-black md:flex ml-[50%] items-center justify-end font-medium text-[20px] hidden'>
+              <div className='item'>
+                <a href='/'>Home</a>
+                <div className='scroll'></div>
+              </div>
+              <div>
+                <div className='mx-4 item'>
+                  <a href='#about'>About Me</a>
+                  <div className='scroll'></div>
+                </div>
+              </div>
+              <div>
+                <div className='item'>
+                  <a href='#projects'>Projects</a>
+                  <div className='scroll'></div>
+                </div>
+              </div>
+              <div>
+                <div className='mx-4 item'>
+                  <a href='#contact'>Contact Me</a>
+                  <div className='scroll'></div>
+                </div>
+              </div>
+                    </div>
+        <div>
+          <button className={isDarkMode ? 'text-yellow-300 hover:opacity-70 text-[20px] ' : 'hidden'} onClick={() => setIsDarkMode(!isDarkMode)}><i className="fa fa-moon-o" aria-hidden="true"></i></button>
+          <button className={isDarkMode ? 'hidden' : 'hover:opacity-70 text-[20px] text-orange-300'} onClick={() => setIsDarkMode(!isDarkMode)}><i className="fa fa-sun-o" aria-hidden="true"></i></button>
+          <button className={isDarkMode ? "text-white mx-3 hover:opacity-70 text-[20px] md:hidden" : "text-black md:hidden mx-3 hover:opacity-70 text-[20px]"} onClick={() => setIsShowMenu(true)}><i className="fa fa-bars" aria-hidden="true"></i></button>
+        </div>
+      </div>
+      {/* Header */}
+      <div className={isDarkMode ? 'bg-black' : 'bg-[#dedede]'}>
+        <h2 className="text-center font-semibold font-mono text-[32px] mt-[70px]">Van Luong</h2>
+        <div className='flex justify-center'>
+          <div className='text-[20px] absolute left-[17%] top-[20%]'>
+            <a href='https://www.facebook.com/always.green.09' target='_blank' className='w-[40px] block hover:opacity-80 h-[40px] rounded-full text-center bg-[#f47e23]'><i className="fa fa-facebook mt-3 text-white" aria-hidden="true"></i></a>
+            <a href='https://www.intagram.com/toilaeddie/' target='_blank' className='w-[40px] block hover:opacity-80 h-[40px] rounded-full text-center bg-[#f47e23] my-2'><i className="fa fa-instagram mt-3 text-white" aria-hidden="true"></i></a>
+            <a href='https://github.csom/LuongLeVan' target='_blank' className='w-[40px] block hover:opacity-80 h-[40px] rounded-full text-center bg-[#f47e23]'><i className="fa fa-github text-white" aria-hidden="true"></i></a>
+            <img src="https://duyminh.vercel.app/assets/img/curved-arrow.svg" alt="curved-arrow" className="home__arrow"></img>
+          </div>
+          
+          <img src={image} className='w-[220px] mt-4 mx-auto relative z-10' alt="image" />
+          <div className={isDarkMode ? 'border-4 border-l-0 border-white w-[180px] right-[25%] top-[22%] h-[290px] absolute' : 'border-4 border-l-0 border-black w-[180px] right-[25%] top-[22%] h-[290px] absolute'}></div>
+        </div>
+        <p className='text-center font-medium font-mono p-6'>
+          <span className='font-[900] text-[16px] bg-[#f47e23] text-white'>Frontend Developer</span>, with knowledge in web development and design, I offer the best projects resulting in quality work.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      </div>
+      {/* Start About me */}
+      <div id='about' className={isDarkMode ? 'bg-black min-h-[600px] test text-white pb-6' : 'pb-6 bg-gray-600 min-h-[600px] text-white'}>
+        <h2 className="text-center font-semibold font-mono text-[32px] pt-6">About Me</h2>
+        <img src={avt} className='w-[380px] m-12  border-8  mx-auto' alt="image" />
+        <div className='px-6  font-mono'>
+          <p>
+            Frontend developer with a passion for building beautiful and functional <span className='font-[600] text-[#f47e23]'>Web Applications</span>. Solid foundation in HTML, CSS, and JavaScript, with experience in <span className='font-[600] text-[#f47e23]'>React, Angular</span>. Quick learner and team player, eager to take on new challenges.
+          </p>
+          <p className='mt-4'>
+            My Skills Are: HTML, CSS, JavaScript, React, Git & GitHub, Bootstrap, Ant Design, Figma.
+          </p>
+          <button className='p-4 mt-6 block w-full text-center bg-[#f47e23] hover:opacity-70'>
+            <span><i className="fa fa-paper-plane mr-3" aria-hidden="true"></i></span>
+            <a href='#contact' className='text-[20px]'>Contact Me</a>
+          </button>
+        </div>
+      </div>
+      {/* End About me */}
+
+      {/* SKILL */}
+
+      <div id='tech' className={isDarkMode ? 'min-h-[600px] bg-black ' : 'min-h-[600px] bg-gray-300'}>
+        <h2 className={isDarkMode ? "text-center  text-white font-semibold font-mono text-[32px] pt-6" : "text-center  text-black font-semibold font-mono text-[32px] pt-6"}>Technologies</h2>
+        <div className='border-4 fe w-[80%] mx-auto mt-3'>
+          <h5 className={isDarkMode ? 'text-white text-center p-4 font-mono text-[24px]' : 'text-black text-center p-4 font-mono text-[24px]'}>
+            <div className='scroll-left'></div>
+            Front end
+            <div className='scroll-right'></div>
+
+          </h5>
+          <div className={isDarkMode ? 'text-white py-4 px-8 grid grid-rows-4 grid-flow-col gap-4 font-mono text-[20px]' : 'text-black py-4 px-8 grid grid-rows-4 grid-flow-col gap-4 font-mono text-[20px]'}>
+            <div className='item'><i className="fa fa-check mr-3" aria-hidden="true"></i>HTML
+              <div className='scroll'></div>
+            </div>
+            <div className='item'><i className="fa fa-check mr-3" aria-hidden="true"></i>CSS
+              <div className='scroll'></div>
+
+            </div>
+            <div className='item'><i className="fa fa-check mr-3" aria-hidden="true"></i>JS
+              <div className='scroll'></div>
+
+            </div>
+            <div className='item'><i className="fa fa-check mr-3" aria-hidden="true"></i>TypeScript
+              <div className='scroll'></div>
+
+            </div>
+            <div className='item'><i className="fa fa-check mr-3" aria-hidden="true"></i>TailwindCss
+              <div className='scroll'></div>
+
+            </div>
+            <div className='item'><i className="fa fa-check mr-3" aria-hidden="true"></i>ReactJs
+              <div className='scroll'></div>
+
+            </div>
+            <div className='item'><i className="fa fa-check mr-3" aria-hidden="true"></i>Angular
+              <div className='scroll'></div>
+
+            </div>
+            <div className='item'><i className="fa fa-check mr-3" aria-hidden="true"></i>Scss
+              <div className='scroll'></div>
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+        <div className='border-4 fe w-[80%] mx-auto mt-3'>
+          <h5 className={isDarkMode ? 'text-white text-center p-4 font-mono text-[24px]' : 'text-black text-center p-4 font-mono text-[24px]'}>
+            <div className='scroll-left'></div>
+            Back end
+            <div className='scroll-right'></div>
+
+          </h5>
+          <div className={isDarkMode ? 'text-white py-4 px-8 grid grid-rows-2 grid-flow-col gap-4 font-mono text-[20px]' : 'text-black py-4 px-8 grid grid-rows-2 grid-flow-col gap-4 font-mono text-[20px]'}>
+            <div className='item'><i className="fa fa-check mr-3" aria-hidden="true"></i>NodeJs
+              <div className='scroll'></div>
+
+            </div>
+            <div className='item'><i className="fa fa-check mr-3" aria-hidden="true"></i>Express
+              <div className='scroll'></div>
+
+            </div>
+            <div className='item'><i className="fa fa-check mr-3" aria-hidden="true"></i>MongoDB
+              <div className='scroll'></div>
+
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+
+      {/* SKILL */}
+      <div className='h-[5px] bg-black'></div>
+      <div className={isDarkMode ? 'bg-black min-h[1200px] pb-8' : 'bg-gray-300 min-h[1200px] pb-8'}>
+        <h2 className="text-center font-semibold font-mono text-[32px] pt-6">
+          <i className="fa fa-spotify mr-3 text-green-800" aria-hidden="true"></i>
+          <span className={isDarkMode ? 'text-white' : 'text-black'}>Music</span></h2>
+
+        <p className={isDarkMode ? "p-4 text-center font-mono text-[18px] text-white" : "p-4 text-center font-mono text-[18px] text-gray-600"}>
+          I love listening to music, it helps me relax and focus on my work.
+          Here are some of my favorite songs.
+        </p>
+        <div className="px-4">
+          <iframe style={{ borderRadius: "12px" }} src="https://open.spotify.com/embed/playlist/0Wpd79Ded8jGDKhtQ7NW6c?utm_source=generator" width="100%" height="352" frameBorder="0" allowFullScreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+      </div>
+
+      {/*Start Project */}
+      <div id='projects' className={isDarkMode ? 'bg-black min-h-[600px]' : 'bg-[#d4d4d4] min-h-[600px]'}>
+        <h2 className={isDarkMode ? "text-center font-semibold font-mono text-[32px] text-white pt-6" : "text-center font-semibold font-mono text-[32px] text-black pt-6"}>Projects</h2>
+        <div className={isDarkMode ? 'pt-8 p-4 m-4' : 'pt-8 text-black  p-4 m-4'}>
+          <a href="https://movie-app-demo-kappa.vercel.app/" target='_blank'><img className='w-[400px] h-[200px] hover:opacity-80 hover:cursor-pointer' src={pj5} alt='project 5' /></a>
+          <div className={'font-mono'}>
+            <span className='relative pl-6 pname'>Website</span>
+            <h3 className='my-4 text-[18px]'>Movie Website</h3>
+            <p>Project is a website sales of watercolor paintings, oil paintings, acrylic paintings, and other types of paintings. Project have a lot of features like: Login, Register, Add to cart, Checkout, Payment, etc.</p>
+            <a href='https://movie-app-demo-kappa.vercel.app/' target='_blank' className={isDarkMode ? 'p-4 mt-6 block w-[180px] bg-[#f47e23] hover:opacity-70' : 'p-4 mt-6 block w-[180px] bg-[#f47e23] hover:text-white hover:opacity-70'}>
+              <span><i className="fa fa-tv mr-3" aria-hidden="true"></i></span>
+              <span className='text-[20px]'>Live demo</span>
+            </a>
+          </div>
+        </div>
+
+        <div className={isDarkMode ? 'pt-8 p-4 m-4' : 'pt-8 xt-black  p-4 m-4'}>
+          <a href="https://ecommerce-demo-mq4gleitw-luonglevan.vercel.app/" target="_blank"><img className='w-[400px] h-[200px] hover:opacity-80 hover:cursor-pointer' src={pj4} alt='project 4' /></a>
+          <div className={'font-mono'}>
+            <span className='relative pl-6 pname'>Website</span>
+            <h3 className='my-4 text-[18px]'>Ecommerce Website</h3>
+            <p>Project is a website sales of watercolor paintings, oil paintings, acrylic paintings, and other types of paintings. Project have a lot of features like: Login, Register, Add to cart, Checkout, Payment, etc.</p>
+            <a href='https://ecommerce-demo-mq4gleitw-luonglevan.vercel.app/' target='_blank' className={isDarkMode ? 'p-4 mt-6 block w-[180px] bg-[#f47e23] hover:opacity-70' : 'p-4 mt-6 block w-[180px] bg-[#f47e23] hover:text-white hover:opacity-70'}>
+              <span><i className="fa fa-tv mr-3" aria-hidden="true"></i></span>
+              <span className='text-[20px]'>Live demo</span>
+            </a>
+          </div>
+        </div>
+
+        <div className={isDarkMode ? 'pt-8 p-4 m-4' : 'pt-8 text-black  p-4 m-4'}>
+          <a href="https://weather-app-with-angular.vercel.app/" target='_blank'><img className='w-[400px] h-[200px] hover:opacity-80 hover:cursor-pointer' src={pj3} alt='project 3' /></a>
+          <div className={'font-mono'}>
+            <span className='relative pl-6 pname'>Website</span>
+            <h3 className='my-4 text-[18px]'>Weather Website</h3>
+            <p>Project is a website sales of watercolor paintings, oil paintings, acrylic paintings, and other types of paintings. Project have a lot of features like: Login, Register, Add to cart, Checkout, Payment, etc.</p>
+            <a href="https://weather-app-with-angular.vercel.app/" target='_blank' className={isDarkMode ? 'p-4 mt-6 block w-[180px] bg-[#f47e23] hover:opacity-70' : 'p-4 mt-6 block w-[180px] bg-[#f47e23] hover:text-white hover:opacity-70'}>
+              <span><i className="fa fa-tv mr-3" aria-hidden="true"></i></span>
+              <span className='text-[20px]'>Live demo</span>
+            </a>
+          </div>
+        </div>
+
+        <div className={isDarkMode ? 'pt-8 p-4 m-4' : 'pt-8 text-black  p-4 m-4'}>
+          <a href="https://rest-countries-api-with-angular.vercel.app/" target='_blank'><img className='w-[400px] h-[200px] hover:opacity-80 hover:cursor-pointer' src={pj1} alt='project 1' /></a>
+          <div className={'font-mono'}>
+            <span className='relative pl-6 pname'>Website</span>
+            <h3 className='my-4 text-[18px]'>Flag Country Website</h3>
+            <p>Project is a website sales of watercolor paintings, oil paintings, acrylic paintings, and other types of paintings. Project have a lot of features like: Login, Register, Add to cart, Checkout, Payment, etc.</p>
+            <a href='https://rest-countries-api-with-angular.vercel.app/' target='_blank' className={isDarkMode ? 'p-4 mt-6 block w-[180px] bg-[#f47e23] hover:opacity-70' : 'p-4 mt-6 block w-[180px] bg-[#f47e23] hover:text-white hover:opacity-70'}>
+              <span><i className="fa fa-tv mr-3" aria-hidden="true"></i></span>
+              <span className='text-[20px]'>Live demo</span>
+            </a>
+          </div>
+        </div>
+
+        <div className={isDarkMode ? 'pt-8 p-4 m-4' : 'pt-8 text-black  p-4 m-4'}>
+          <a href="https://profile-with-angular-av6nw4guq-luonglevan.vercel.app/" target='_blank'><img className='w-[400px] h-[200px] hover:opacity-80 hover:cursor-pointer' src={pj2} alt='project 2' /></a>
+          <div className={'font-mono'}>
+            <span className='relative pl-6 pname'>Website</span>
+            <h3 className='my-4 text-[18px]'>Generator Password Website</h3>
+            <p>Project is a website sales of watercolor paintings, oil paintings, acrylic paintings, and other types of paintings. Project have a lot of features like: Login, Register, Add to cart, Checkout, Payment, etc.</p>
+            <a href='https://profile-with-angular-av6nw4guq-luonglevan.vercel.app/' target='_blank' className={isDarkMode ? 'p-4 mt-6 block w-[180px] bg-[#f47e23] hover:opacity-70' : 'p-4 mt-6 block w-[180px] bg-[#f47e23] hover:text-white hover:opacity-70'}>
+              <span><i className="fa fa-tv mr-3" aria-hidden="true"></i></span>
+              <span className='text-[20px]'>Live demo</span>
+            </a>
+          </div>
+        </div>
+        <h4 className='p-8 text-center font-mono text-[22px] underline'>
+          <span><i className="fa fa-github mr-3" aria-hidden="true"></i></span>
+          <a className={isDarkMode ? 'text-white' : 'text-black'} href='https://github.com/LuongLeVan?tab=repositories' target='_blank'>See more on github</a>
+        </h4>
+      </div>
+
+      {/*End Project */}
+
+      {/* Contact */}
+      <div className={isDarkMode ? 'h-[3px] bg-white' : 'h-[5px] bg-black'}></div>
+      
+      <div id='contact' className={isDarkMode ? 'bg-black p-6 min-h-[300px]' : 'bg-black test p-6 min-h-[300px]'}>
+      <h2 className={isDarkMode ? "text-center font-semibold font-mono text-[32px] text-white pt-6" : "text-center font-semibold font-mono text-[32px] text-white mb-4"}>Contact Me</h2>
+        <p className='text-white text-center font-mono text-[14px] mb-4'>
+        I will read all emails. Send me any message you want and I'll get back to you.
+
+I need your Email Address, and I'll get back to you in a few hours.
+        </p>
+        <h5 className='text-center text-white text-[23px] mb-4 font-mono font-[600]'>Send Me A Message</h5>
+        <form action="https://formsubmit.co/levanluongk15@gmail.com" method="POST">
+          <input className='block w-full p-3 outline-none font-mono border-4 border-gray-500' placeholder='Your Email' type="email" name="email" required />
+          <textarea className='block w-full mt-4 p-3 outline-none font-mono border-4 border-gray-500' type="text" name="name" placeholder='Your content' required> </textarea>
+          <input className='my-4 p-4' type="checkbox" name="_captcha" value="false" /> <span className='font-mono text-white'>I'm not a robot</span>
+
+          <input type="hidden" name="_subject" value="New submission!" />
+          <input type="hidden" name="_blacklist" value="spammy pattern, banned term, phrase" />
+          <input type="hidden" name="_next" value="http://localhost:3000/" />
+
+
+
+
+          <button className='block w-full p-2 text-white font-mono text-[20px] bg-[#f47e23]' type='submit'>
+          <span><i className="fa fa-send mr-3" aria-hidden="true"></i></span>
+  
+            Send</button>
+        </form>
+
+      </div>
+      {/* Contact */}
+
+      {/* Footer */}
+      <div className='bg-black text-white min-h-[150px] shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)]'>
+        <ul className='flex items-center justify-center pt-12 text-[20px] font-mono'>
+          <li className='hover:opacity-70'><a href='#about'>About Me</a></li>
+          <li className='mx-6 hover:opacity-70'><a href='#tech'>Technologies</a></li>
+          <li className='hover:opacity-70'><a href='#projects'>Projects</a></li>
+        </ul>
+        <h3 className='text-center mt-6 font-mono'><span className='text-gray-500'>© All Rights Reserved By</span> Van Luong</h3>
+      </div>
+      {/* Footer */}
     </div>
   );
 }
