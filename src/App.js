@@ -62,7 +62,7 @@ function App() {
 
 
 
-      <button className='text-white bg-[#f47e23] rounded-full px-3 py-2 fixed bottom-4 right-4 hover:opacity-70' onClick={handleSmooth}>
+      <button className='text-white bg-[#f47e23]  px-4 py-2 fixed bottom-4 right-4 hover:opacity-70' onClick={handleSmooth}>
         <span><i className="fa fa-arrow-up" aria-hidden="true"></i></span>
       </button>
       {/* Header */}
@@ -103,19 +103,19 @@ function App() {
         </div>
       </div>
       {/* Header */}
-      <div className={isDarkMode ? 'bg-black md:flex  md:flex-row-reverse md:px-36 py-[100px]' : 'bg-[#dedede] md:flex  md:flex-row-reverse md:px-36 md:py-[100px] py-[110px]'}>
+      <div className={isDarkMode ? 'bg-black md:flex  md:flex-row-reverse md:px-36  py-[110px]' : 'bg-[#dedede] md:flex  md:flex-row-reverse md:px-36  md:py-[100px] py-[110px]'}>
         <div className='md:w-[50%]'>
           <h2 className="text-center font-semibold font-mono text-[32px] mt-[-30px] md:mt-[70px] md:hidden">Van Luong</h2>
           <div className='flex justify-center'>
-            <div className='text-[20px] absolute left-[17%] top-[20%] md:left-[55%]'>
+            <div className='text-[20px] absolute left-[15%] top-[20%] md:left-[55%]'>
               <a href='https://www.facebook.com/always.green.09' target='_blank' className='w-[40px] md:w-[60px] md:h-[60px] block hover:opacity-80 h-[40px] rounded-full text-center bg-[#f47e23] '><i className="fa-brands fa-facebook mt-3 md:mt-5 md:text-[24px] text-white" aria-hidden="true"></i></a>
               <a href='https://www.intagram.com/toilaeddie/' target='_blank' className='w-[40px] md:w-[60px] md:h-[60px] block hover:opacity-80 h-[40px] rounded-full text-center bg-[#f47e23]  my-2'><i className="fa-brands fa-instagram mt-3 text-white md:mt-5 md:text-[24px]" aria-hidden="true"></i></a>
-              <a href='https://github.csom/LuongLeVan' target='_blnk' className='w-[40px] md:w-[60px] md:h-[60px] block hover:opacity-80 h-[40px] rounded-full text-center bg-[#f47e23] '><i className="fa-brands fa-github text-white md:mt-4 md:text-[24px]" aria-hidden="true"></i></a>
+              <a href='https://github.csom/LuongLeVan' target='_blank' className='w-[40px] md:w-[60px] md:h-[60px] block hover:opacity-80 h-[40px] rounded-full text-center bg-[#f47e23] '><i className="fa-brands fa-github text-white md:mt-4 md:text-[24px]" aria-hidden="true"></i></a>
             </div>
             <img src={image} className='w-[220px] mt-4 mx-auto relative z-10 md:w-[320px]' alt="image" />
 
 
-            <div className={isDarkMode ? 'border-4 border-l-0 border-white w-[180px] right-[25%] top-[22%] h-[290px] absolute md:h-[420px]  md:right-[17%]' : 'border-4 border-l-0 border-black w-[180px] right-[25%] top-[22%] h-[290px] md:h-[420px]  md:right-[17%] absolute'}></div>
+            <div className={isDarkMode ? 'border-4 border-l-0 border-white w-[180px] right-[22%] top-[22%] h-[290px] absolute md:h-[420px]  md:right-[17%]' : 'border-4 border-l-0 border-black w-[180px] right-[22%] top-[22%] h-[290px] md:h-[420px]  md:right-[17%] absolute'}></div>
           </div>
         </div>
         <div className='md:w-[50%]'>
@@ -129,7 +129,7 @@ function App() {
       <div id='about' className={isDarkMode ? 'bg-black min-h-[600px] test text-white pb-6 pt-[6%]' : 'pb-6 pt-[6%] bg-gray-600 min-h-[600px] text-white'}>
         <h2 className="text-center font-semibold font-mono text-[32px] pt-6 md:hidden">About Me</h2>
         <div className='md:flex md:items-center'>
-          <img src={avt} className='w-[380px] m-12 md:h-[370px] md:w-[440px] border-8  mx-auto' alt="image" />
+          <img src={avt} className='w-[360px] m-12 md:h-[370px] md:w-[440px] border-8  mx-auto' alt="image" />
           <div className='px-6  font-mono md:w-[40%] md:mr-[10%]'>
             <h2 className="font-semibold font-mono text-[32px] hidden md:block md:text-[48px]">About Me</h2>
 
@@ -332,7 +332,7 @@ function App() {
 
       {/* Footer */}
       <div className='bg-black text-white min-h-[150px] shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)] md:flex md:items-center md:flex-row-reverse	md:justify-between md:px-36'>
-        <ul className='flex items-center justify-center pt-12 md:pt-[24px] text-[20px] font-mono'>
+        <ul className='flex items-center justify-center pt-12 md:pt-[24px] text-[18px] font-mono'>
           <li className='hover:opacity-70'><a href='#about'>About Me</a></li>
           <li className='mx-6 hover:opacity-70'><a href='#tech'>Technologies</a></li>
           <li className='hover:opacity-70'><a href='#projects'>Projects</a></li>
