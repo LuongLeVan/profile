@@ -81,3 +81,12 @@ background-color: black;}
     transform: rotate(10deg);
 
 }
+.message{
+    transform: translateX(100%);
+    transition: .5s ease-in transform;
+
+}
+.show-message{
+    transform: translateX(0);
+    transition: .5s ease-in transform;
+}

@@ -26,6 +26,7 @@ function App() {
 
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [isShowMenu, setIsShowMenu] = useState(false);
+  const [isShowMessage, setIsShowMessage] = useState(false);
 
   const handleSmooth = () => {
     window.scrollTo({
@@ -33,8 +34,21 @@ function App() {
       behavior: "smooth",
     });
   }
+  const handleSend = () => {
+    setIsShowMessage(true);
+    setTimeout(() => {
+      setIsShowMessage(!setIsShowMenu);
+    }, 4000);
+  }
   return (
     <div className={isDarkMode ? 'bg-black text-white' : ''}>
+        {/* noti */}
+          <div className={isShowMessage ? 'text-[16px] fixed message show-message top-4 rounded-[4px] right-0 z-50 bg-orange-500 px-6 py-4 text-white font-mono' : 'text-[16px] fixed message top-4 rounded-[4px] right-0 z-50 bg-orange-500 px-6 py-4 text-white font-mono '}>
+            <i className='fa fa-check mr-3'></i>
+            Send Successful 
+            <i class="fa-solid fa-face-smile-wink ml-2"></i>
+          </div>
+        {/* noti */}
       {/* Menu Mobile */}
       <div className={isShowMenu ? 'bg-black-rgba fixed top-0 left-0 right-0 h-[400px] z-50 font-mono ' : 'bg-black-rgba fixed top-0 left-0 right-0 h-[400px] z-50 font-mono hidden'}>
         <div className='font-mono flex justify-end items-center text-white'>
@@ -114,7 +128,7 @@ function App() {
         </div>
       </div>
       {/* Header */}
-      <div className={isDarkMode ? 'star md:flex  md:flex-row-reverse md:px-36  pt-[110px] pb-[15px]' : 'bg-[#dedede] md:flex  md:flex-row-reverse md:px-36  md:pt-[100px] pb-[15px] py-[110px]'}>
+      <div className={isDarkMode ? 'star md:flex  md:flex-row-reverse md:px-36  pt-[110px] pb-[40px]' : 'bg-[#dedede] md:flex  md:flex-row-reverse md:px-36  md:pt-[100px] pb-[40px] py-[110px]'}>
         <div className='md:w-[50%]'>
           <h2 className="text-center font-semibold font-mono text-[32px] mt-[-30px] md:mt-[70px] md:hidden">Van Luong</h2>
           <div className='flex justify-center'>
@@ -162,7 +176,7 @@ function App() {
               <span className='pname relative'>Frontend</span> developer with a passion for building beautiful and functional <span className='font-[600] text-[#f47e23]'>Web Applications</span>. Solid foundation in HTML, CSS, and JavaScript, with experience in <span className='font-[600] text-[#f47e23]'>React, Angular</span>. Quick learner and team player, eager to take on new challenges.
             </p>
             <p className='mt-4 md:text-[20px]'>
-              My Skills Are: HTML, CSS, JavaScript, React, Git & GitHub, Bootstrap, Ant Design, Figma.
+              My Skills Are: HTML, CSS, JavaScript, React, Git & GitHub, Typescript, Angular, TaildwindCss.
             </p>
             <button className='p-4 mt-6 block w-full text-center bg-[#f47e23] hover:opacity-70 md:w-[40%]'>
               <span><i className="fa fa-paper-plane mr-3" aria-hidden="true"></i></span>
@@ -261,7 +275,8 @@ function App() {
               <span className='relative pl-4 pname md:hidden block'>Website</span>
               <span className='relative pl-4 line hidden md:block'>Website</span>
               <h3 className='my-4 text-[18px]'>Movie Website</h3>
-              <p>Project is a website sales of watercolor paintings, oil paintings, acrylic paintings, and other types of paintings. Project have a lot of features like: Login, Register, Add to cart, Checkout, Payment, etc.</p>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.of type and scrambled it to make a type specimen book. like Aldus PageMaker including versions of Lorem Ipsum.
+</p>
               <a href='https://movie-app-demo-kappa.vercel.app/' target='_blank' className={isDarkMode ? 'p-4 mt-6 block w-[180px] bg-[#f47e23] hover:opacity-70' : 'p-4 mt-6 block w-[180px] bg-[#f47e23] hover:text-white hover:opacity-70'}>
                 <span><i className="fa fa-tv mr-3" aria-hidden="true"></i></span>
                 <span className='text-[20px]'>Live demo</span>
@@ -273,7 +288,7 @@ function App() {
             <div className={'font-mono'}>
               <span className='relative pl-4 pname md:hidden block'>Website</span>
               <span className='relative pl-4 line hidden md:block'>Website</span>              <h3 className='my-4 text-[18px]'>Ecommerce Website</h3>
-              <p>Project is a website sales of watercolor paintings, oil paintings, acrylic paintings, and other types of paintings. Project have a lot of features like: Login, Register, Add to cart, Checkout, Payment, etc.</p>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.of type and scrambled it to make a type specimen book. like Aldus PageMaker including versions of Lorem Ipsum.</p>
               <a href='https://ecommerce-demo-mq4gleitw-luonglevan.vercel.app/' target='_blank' className={isDarkMode ? 'p-4 mt-6 block w-[180px] bg-[#f47e23] hover:opacity-70' : 'p-4 mt-6 block w-[180px] bg-[#f47e23] hover:text-white hover:opacity-70'}>
                 <span><i className="fa fa-tv mr-3" aria-hidden="true"></i></span>
                 <span className='text-[20px]'>Live demo</span>
@@ -285,7 +300,7 @@ function App() {
             <div className={'font-mono'}>
               <span className='relative pl-4 pname md:hidden block'>Website</span>
               <span className='relative pl-4 line hidden md:block'>Website</span>              <h3 className='my-4 text-[18px]'>Weather Website</h3>
-              <p>Project is a website sales of watercolor paintings, oil paintings, acrylic paintings, and other types of paintings. Project have a lot of features like: Login, Register, Add to cart, Checkout, Payment, etc.</p>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.of type and scrambled it to make a type specimen book. like Aldus PageMaker including versions of Lorem Ipsum.</p>
               <a href="https://weather-app-with-angular.vercel.app/" target='_blank' className={isDarkMode ? 'p-4 mt-6 block w-[180px] bg-[#f47e23] hover:opacity-70' : 'p-4 mt-6 block w-[180px] bg-[#f47e23] hover:text-white hover:opacity-70'}>
                 <span><i className="fa fa-tv mr-3" aria-hidden="true"></i></span>
                 <span className='text-[20px]'>Live demo</span>
@@ -297,7 +312,7 @@ function App() {
             <div className={'font-mono'}>
               <span className='relative pl-4 pname md:hidden block'>Website</span>
               <span className='relative pl-4 line hidden md:block'>Website</span>              <h3 className='my-4 text-[18px]'>Flag Country Website</h3>
-              <p>Project is a website sales of watercolor paintings, oil paintings, acrylic paintings, and other types of paintings. Project have a lot of features like: Login, Register, Add to cart, Checkout, Payment, etc.</p>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.of type and scrambled it to make a type specimen book. like Aldus PageMaker including versions of Lorem Ipsum.</p>
               <a href='https://rest-countries-api-with-angular.vercel.app/' target='_blank' className={isDarkMode ? 'p-4 mt-6 block w-[180px] bg-[#f47e23] hover:opacity-70' : 'p-4 mt-6 block w-[180px] bg-[#f47e23] hover:text-white hover:opacity-70'}>
                 <span><i className="fa fa-tv mr-3" aria-hidden="true"></i></span>
                 <span className='text-[20px]'>Live demo</span>
@@ -309,7 +324,7 @@ function App() {
             <div className={'font-mono'}>
               <span className='relative pl-4 pname md:hidden block'>Website</span>
               <span className='relative pl-4 line hidden md:block'>Website</span>              <h3 className='my-4 text-[18px]'>Generator Password Website</h3>
-              <p>Project is a website sales of watercolor paintings, oil paintings, acrylic paintings, and other types of paintings. Project have a lot of features like: Login, Register, Add to cart, Checkout, Payment, etc.</p>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.of type and scrambled it to make a type specimen book. like Aldus PageMaker including versions of Lorem Ipsum.</p>
               <a href='https://profile-with-angular-av6nw4guq-luonglevan.vercel.app/' target='_blank' className={isDarkMode ? 'p-4 mt-6 block w-[180px] bg-[#f47e23] hover:opacity-70' : 'p-4 mt-6 block w-[180px] bg-[#f47e23] hover:text-white hover:opacity-70'}>
                 <span><i className="fa fa-tv mr-3" aria-hidden="true"></i></span>
                 <span className='text-[20px]'>Live demo</span>
@@ -346,7 +361,7 @@ function App() {
             <input type="hidden" name="_subject" value="New submission!" />
             <input type="hidden" name="_blacklist" value="spammy pattern, banned term, phrase" />
             <input type="hidden" name="_next" value="https://vanluong.vercel.app" />
-            <button className='block w-full p-2 text-white font-mono text-[20px] bg-[#f47e23]' type='submit'>
+            <button onClick={handleSend} className='block w-full p-2 text-white font-mono text-[20px] bg-[#f47e23]' type='submit'>
               <span><i className="fa fa-send mr-3" aria-hidden="true"></i></span>
               Send</button>
           </form>
