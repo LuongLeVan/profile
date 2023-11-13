@@ -468,7 +468,7 @@ function App() {
           <form action="https://formsubmit.co/levanluongk15@gmail.com" method="POST">
             <input className='block w-full p-3 outline-none font-mono border-4 text-black border-gray-500 md:w-full]' placeholder='Your Email' type="email" name="email" required />
             
-            <textarea className='block w-full mt-4 p-3 outline-none font-mono border-4 border-gray-500 text-black' type="text" name="name" placeholder='Write Here...' required>  </textarea>
+            <textarea className='block w-full mt-4 p-3 outline-none font-mono border-4 border-gray-500 text-black' type="text" name="name" placeholder='Write Here...' required></textarea>
             <div className='flex items-center bg-white justify-between h-[74px] px-2 my-3 text-black'>
               <input className='my-4 p-4 check-box' type="checkbox" name="_captcha" value="false" onChange={(e) => handleCheckBox(e)} />
               <span className='font-mono text-[15px] ml-[-18%]'>I'm not a robot</span>
