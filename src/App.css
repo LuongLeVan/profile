@@ -26,6 +26,18 @@
         left: -10%;
       
 }
+.line-about::after{
+    
+    content: "";
+    width: 20px;
+    height: 2px;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: -25%;
+  
+}
+
 .line::after{
     
     content: "";
@@ -69,7 +81,9 @@ li:hover .scroll{
     background-color: #f47e23;
     transition: .5s width;
 }
-
+input[type="checkbox"] {
+    zoom: 1.5;
+}
 .fe:hover .scroll-right{
     width: 20%;
 
@@ -102,6 +116,14 @@ background-color: black;}
     transform: translateX(0);
     transition: .5s ease-in transform;
 }
+.box-pc{
+    background-color: #f47e23;
+    border-radius: 50%;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 3%;
+}
 .box{
     background-color: #f47e23;
     border-radius: 50%;
@@ -110,3 +132,6 @@ background-color: black;}
     height: 20px;
     left: 10%;
 }
+
+
+/* Snow flake */
