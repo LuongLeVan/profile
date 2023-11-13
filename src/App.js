@@ -44,6 +44,14 @@ function App() {
       setIsShowMessage(!setIsShowMenu);
     }, 4000);
   }
+
+  /* useEffect(() => {
+    setIsShowMessage(true);
+    setTimeout(() => {
+      setIsShowMessage(!setIsShowMenu);
+    }, 4000);
+  }, [])
+   */
   const handleCheckBox = (e) => {
     const box = document.querySelector('.check-box').checked;
     const btn = document.querySelector('.submit');
@@ -112,7 +120,7 @@ function App() {
         </ul>
       </div>
       {/* Menu Mobile */}
-      <button className='text-white bg-[#f47e23]  px-4 py-2 fixed bottom-4 right-4 hover:opacity-70' onClick={handleSmooth}>
+      <button className='text-white bg-[#f47e23] px-4 py-2 fixed bottom-4 right-4 hover:opacity-70 z-50' onClick={handleSmooth}>
         <span><i className="fa fa-arrow-up" aria-hidden="true"></i></span>
       </button>
       {/* Header */}
@@ -175,7 +183,7 @@ function App() {
             <img src={snow} className='w-[50px] snow md:hidden absolute mx-auto z-10 md:w-[20px]' alt="snow" />
 
 
-            <div className={isDarkMode ? 'border-4 border-l-0 border-white w-[180px] right-[15%] top-[21%] h-[290px] absolute md:h-[420px]  md:right-[17%]' : 'border-4 border-l-0 border-black w-[180px] right-[15%] top-[21%] h-[290px] md:h-[420px]  md:right-[17%] absolute'}></div>
+            <div className={isDarkMode ? 'border-4 border-l-0 border-white w-[180px] right-[15%] top-[18%] h-[290px] absolute md:h-[420px] md:right-[17%]' : 'border-4 border-l-0 border-black w-[180px] right-[15%] top-[18%] h-[290px] md:h-[420px]  md:right-[17%] absolute'}></div>
           </div>
         </div>
         <div className='md:w-[50%] relative'>
@@ -368,11 +376,13 @@ function App() {
 
       {/*Start Project */}
       <div id='projects' className={isDarkMode ? 'star min-h-[600px] relative' : 'bg-[#d4d4d4] min-h-[600px] relative'}>
-        <h2 className={isDarkMode ? "text-center font-semibold font-mono text-[32px] md:text-[48px] text-white pt-6" : "text-center md:text-[48px] font-semibold font-mono text-[32px] text-black pt-6"}>Projects</h2>
-        <img className='w-7 absolute top-[20px] right-[24%]' src={star} alt='star' />
+
+        <img className='w-7 absolute top-[1.4%] left-[23%] md:top-[4%] md:left-[41%]' src={star} alt='star' />
+        <h2 className={isDarkMode ? "text-center  text-white font-semibold font-mono text-[32px] pt-6 md:text-[48px]" : "text-center  text-black font-semibold font-mono text-[32px] pt-6 md:text-[48px]"}>ProJects</h2>
+        <img className='w-7 absolute top-[0.4%] right-[24%] md:top-[2%] md:right-[41%]' src={star} alt='star' />
 
         <div className='md:grid md:grid-cols-3 md:text-[20px] '>
-          <div className={isDarkMode ? 'pt-8 p-4 m-4 min-h-[350px]' : 'pt-8 text-black  p-4 m-4 min-h-[350px]'}>
+          <div className={isDarkMode ? 'pt-8 p-4 m-4' : 'pt-8 text-black  p-4 m-4'}>
             <a href="https://movie-app-demo-kappa.vercel.app/" target='_blank'><img className='w-[400px] h-[200px] hover:opacity-80 hover:cursor-pointer' src={pj5} alt='project 5' /></a>
             <div className={'font-mono'}>
               <span className='relative pl-4 pname md:hidden'>Website</span>
@@ -454,8 +464,9 @@ function App() {
  */}
       <div id='contact' className={isDarkMode ? 'star p-6 min-h-[300px] relative md:flex md:px-36' : 'bg-black test p-6 min-h-[300px] relative md:flex md:px-36'}>
         <div className='md:w-[50%]'>
+          <img className='w-7 absolute top-[9%] left-[23%] md:top-[20%] md:left-[19%] ' src={star} alt='star' />
           <h2 className={isDarkMode ? "text-center font-semibold font-mono text-[32px] text-white pt-6 md:text-[48px]" : "text-center font-semibold font-mono text-[32px] text-white mb-4 md:text-[48px]"}>Contact Me</h2>
-          <img className='w-7 absolute top-[20px] right-[20%] md:top-[20px] md:left-[38%] ' src={star} alt='star' />
+          <img className='w-7 absolute top-[3.6%] right-[23%] md:top-[20px] md:left-[38%] ' src={star} alt='star' />
 
           <p className='text-white text-center font-mono text-[14px] mb-4 md:px-11 md:text-[20px] '>
             I will read all emails. Send me any message you want and I'll get back to you.
@@ -484,7 +495,7 @@ function App() {
             <input type="hidden" name="_subject" value="New submission!" />
             <input type="hidden" name="_blacklist" value="spammy pattern, banned term, phrase" />
             <input type="hidden" name="_next" value="https://vanluong.vercel.app" />
-            <button onClick={handleSend} className='block w-full p-2 text-white font-mono text-[20px] bg-[#f47e23] submit' disabled type='submit'>
+            <button onClick={handleSend} className='block w-full p-2 md:px-2 md:py-4 text-white font-mono text-[20px] bg-[#f47e23] submit' disabled type='submit'>
               <span><i className="fa fa-send mr-3" aria-hidden="true"></i></span>
               Send</button>
           </form>
