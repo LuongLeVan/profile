@@ -470,7 +470,7 @@ function App() {
             
             <textarea className='block w-full mt-4 p-3 outline-none font-mono border-4 border-gray-500 text-black' type="text" name="name" placeholder='Write Here...' required>  </textarea>
             <div className='flex items-center bg-white justify-between h-[74px] px-2 my-3 text-black'>
-              <input className='my-4 p-6 check-box' type="checkbox" name="_captcha" value="false" onChange={(e) => handleCheckBox(e)} />
+              <input className='my-4 p-4 check-box' type="checkbox" name="_captcha" value="false" onChange={(e) => handleCheckBox(e)} />
               <span className='font-mono text-[15px] ml-[-18%]'>I'm not a robot</span>
               <div>
                 <img className='w-8 text-center block ml-[36%]' src={capcha} alt='capcha'/>
