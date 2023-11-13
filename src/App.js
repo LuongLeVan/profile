@@ -15,7 +15,9 @@ import github from './images/github (1).png';
 import arrow from './images/swirly-scribbled-arrow-svgrepo-com.svg'
 import snow from './images/snow-crystal-2-svgrepo-com.svg'
 import snowman from './images/snowman-9-svgrepo-com.svg'
-import santa from './images/santa-and-reindeer-on-a-sleigh-svgrepo-com.svg'
+import check from './images/checkmark.webp'
+import star from './images/star-alt-3-svgrepo-com.svg'
+import spotify from './images/spotify.jpg'
 import tree from './images/christmas-tree-svgrepo-com.svg'
 
 
@@ -42,15 +44,15 @@ function App() {
   }
   return (
     <div className={isDarkMode ? 'bg-black text-white' : ''}>
-        {/* noti */}
-          <div className={isShowMessage ? 'text-[16px] fixed message show-message top-4 rounded-[4px] right-0 z-50 bg-orange-500 px-6 py-4 text-white font-mono' : 'text-[16px] fixed message top-4 rounded-[4px] right-0 z-50 bg-orange-500 px-6 py-4 text-white font-mono '}>
-            <i className='fa fa-check mr-3'></i>
-            Send Successful 
-            <i class="fa-solid fa-face-smile-wink ml-2"></i>
-          </div>
-        {/* noti */}
+      {/* noti */}
+      <div className={isShowMessage ? 'text-[16px] fixed message show-message top-4 rounded-[4px] right-0 z-50 bg-orange-500 px-6 py-4 text-white font-mono' : 'text-[16px] fixed message top-4 rounded-[4px] right-0 z-50 bg-orange-500 px-6 py-4 text-white font-mono '}>
+        <i className='fa fa-check mr-3'></i>
+        Send Successful
+        <i class="fa-solid fa-face-smile-wink ml-2"></i>
+      </div>
+      {/* noti */}
       {/* Menu Mobile */}
-      <div className={isShowMenu ? 'bg-black-rgba fixed top-0 left-0 right-0 h-[400px] z-50 font-mono ' : 'bg-black-rgba fixed top-0 left-0 right-0 h-[400px] z-50 font-mono hidden'}>
+      <div className={isShowMenu ? 'bg-black-rgba show-menu z-50 font-mono ' : 'bg-black-rgba fixed top-0 left-0 right-0 h-[400px] z-50 font-mono hide'}>
         <div className='font-mono flex justify-end items-center text-white'>
           <span className='font-[600] text-[14px] block w-full ml-[46%]'>Menu</span>
           <button className='p-4 hover:opacity-70 text-[20px]' onClick={() => setIsShowMenu(false)}><i className="fa fa-close" aria-hidden="true"></i></button>
@@ -84,9 +86,6 @@ function App() {
         </ul>
       </div>
       {/* Menu Mobile */}
-
-
-
       <button className='text-white bg-[#f47e23]  px-4 py-2 fixed bottom-4 right-4 hover:opacity-70' onClick={handleSmooth}>
         <span><i className="fa fa-arrow-up" aria-hidden="true"></i></span>
       </button>
@@ -130,18 +129,19 @@ function App() {
       {/* Header */}
       <div className={isDarkMode ? 'star md:flex  md:flex-row-reverse md:px-36  pt-[110px] pb-[40px]' : 'bg-[#dedede] md:flex  md:flex-row-reverse md:px-36  md:pt-[100px] pb-[40px] py-[110px]'}>
         <div className='md:w-[50%]'>
-          <h2 className="text-center font-semibold font-mono text-[32px] mt-[-30px] md:mt-[70px] md:hidden">Van Luong</h2>
+          <h2 className="text-center font-semibold z-10 font-mono text-[32px] mt-[-30px] md:mt-[70px] md:hidden">Van Luong</h2>
+          <img className='w-5 absolute top-[11%] right-[23%]' src={star} alt='star' />
           <div className='flex justify-center'>
             <div className='text-[20px] absolute left-[6%] top-[20%] md:left-[56%]'>
               <a href='https://www.facebook.com/always.green.09' target='_blank' className='w-[40px] md:w-[40px] md:h-[40px] block hover:opacity-80 h-[40px] rounded-full text-center '>
-                <img src={facebook} alt="facebook"/>
+                <img src={facebook} alt="facebook" />
               </a>
               <a href='https://www.intagram.com/toilaeddie/' target='_blank' className='w-[40px] md:w-[40px] md:h-[40px] block hover:opacity-80 h-[40px] rounded-full text-center  my-2'>
-              <img src={instagram} alt="instagram"/>
-                
+                <img src={instagram} alt="instagram" />
+
               </a>
               <a href='https://github.csom/LuongLeVan' target='_blank' className='w-[40px] md:w-[40px] md:h-[40px] block hover:opacity-80 h-[40px] rounded-full text-center '>
-              <img src={github} alt="github"/>
+                <img src={github} alt="github" />
 
               </a>
             </div>
@@ -153,20 +153,23 @@ function App() {
           </div>
         </div>
         <div className='md:w-[50%] relative'>
-        <img src={arrow} className='w-[50px] arrow absolute mx-auto md:hidden z-10 md:w-[20px]' alt="arrow" />
-        <img src={snowman} className='w-[50px] md:hidden snowman absolute mx-auto z-10 md:w-[20px]' alt="snowman" />
+          <img src={arrow} className='w-[50px] arrow absolute mx-auto md:hidden z-10 md:w-[20px]' alt="arrow" />
+          <img src={snowman} className='w-[50px] md:hidden snowman absolute mx-auto z-10 md:w-[20px]' alt="snowman" />
           <p className='text-center font-medium font-mono p-6'>
             <h2 className="text-center font-semibold font-mono text-[32px] mt-[70px] hidden md:block">Van Luong</h2>
             <p className='md:text-[22px] mt-4'><span className='font-[900] md:text-[22px] text-[16px] bg-[#f47e23] text-white'>Frontend Developer</span>, with knowledge in web development and design, I offer the best projects resulting in quality work.</p>
           </p>
         </div>
-        
+
         {/* <img className='w-[100px] ml-[40%] md:hidden tree' src={tree} alt="tree"/>
         <img className='w-[100px] absolute right-0 md:hidden santa' src={santa} alt="santa"/> */}
       </div>
       {/* Start About me */}
-      <div id='about' className={isDarkMode ? 'star min-h-[600px] test text-white pb-6 pt-[6%]' : 'pb-6 pt-[6%] bg-gray-600 min-h-[600px] text-white'}>
+      <div id='about' className={isDarkMode ? 'star min-h-[600px] test text-white pb-6 relative pt-[6%]' : 'pb-6 relative pt-[6%] bg-gray-600 min-h-[600px] text-white'}>
+        <img className='w-7 absolute top-[9%] left-[23%]' src={star} alt='star' />
         <h2 className="text-center font-semibold font-mono text-[32px] pt-6 md:hidden">About Me</h2>
+        <img className='w-7 absolute top-[5%] right-[23%]' src={star} alt='star' />
+
         <div className='md:flex md:items-center'>
           <img src={avt} className='w-[360px] m-12 md:h-[370px] md:w-[440px] border-8  mx-auto' alt="image" />
           <div className='px-6  font-mono md:w-[40%] md:mr-[10%]'>
@@ -176,7 +179,7 @@ function App() {
               <span className='pname relative'>Frontend</span> developer with a passion for building beautiful and functional <span className='font-[600] text-[#f47e23]'>Web Applications</span>. Solid foundation in HTML, CSS, and JavaScript, with experience in <span className='font-[600] text-[#f47e23]'>React, Angular</span>. Quick learner and team player, eager to take on new challenges.
             </p>
             <p className='mt-4 md:text-[20px]'>
-              My Skills Are: HTML, CSS, JavaScript, React, Git & GitHub, Typescript, Angular, TaildwindCss.
+              My Skills Are: HTML, CSS, JavaScript,Typescript , React, Git & GitHub, Angular, Taildwind.
             </p>
             <button className='p-4 mt-6 block w-full text-center bg-[#f47e23] hover:opacity-70 md:w-[40%]'>
               <span><i className="fa fa-paper-plane mr-3" aria-hidden="true"></i></span>
@@ -189,57 +192,116 @@ function App() {
 
       {/* SKILL */}
 
-      <div id='tech' className={isDarkMode ? 'min-h-[650px] star ' : 'min-h-[650px] bg-gray-300'}>
+      <div id='tech' className={isDarkMode ? 'min-h-[650px] relative bg-[#121111] ' : 'min-h-[650px] relative bg-gray-300'}>
+        <img className='w-7 absolute top-[7%] left-[15%]' src={star} alt='star' />
         <h2 className={isDarkMode ? "text-center  text-white font-semibold font-mono text-[32px] pt-6 md:text-[48px]" : "text-center  text-black font-semibold font-mono text-[32px] pt-6 md:text-[48px]"}>Technologies</h2>
+        <img className='w-7 absolute top-[4%] right-[14%]' src={star} alt='star' />
+
         <div className='md:flex md:p-11'>
-          <div className='border-4 fe w-full mx-auto mt-3 md:mr-11'>
-            <h5 className={isDarkMode ? 'text-white text-center p-4 font-mono text-[24px]' : 'text-black text-center p-4 font-mono text-[24px]'}>
+          <div className='border-4 fe w-full mx-auto pt-4 md:mr-11'>
+            <h5 className={isDarkMode ? 'text-white text-center p-4 font-mono text-[24px] px-[30%]' : 'text-black text-center p-4 font-mono text-[24px] px-[30%]'}>
               <div className='scroll-left'></div>
               Front end
               <div className='scroll-right'></div>
             </h5>
             <div className={isDarkMode ? 'text-white py-4 px-8 grid grid-rows-4 grid-flow-col gap-4 font-mono text-[20px]' : 'text-black py-4 px-8 grid grid-rows-4 grid-flow-col gap-4 font-mono text-[20px]'}>
-              <div className='item'><i className="fa fa-check mr-3" aria-hidden="true"></i>HTML
-                <div className='scroll'></div>
+              <div className='item'>
+                <div className='flex relative'>
+                  <img className='w-7 z-10' src={check} alt='check' />
+                  <div className='box'></div>
+                  <span className='z-10 ml-2'>HTML</span>
+                </div>
+                {/* <div className='scroll'></div> */}
               </div>
-              <div className='item'><i className="fa fa-check mr-3" aria-hidden="true"></i>CSS
-                <div className='scroll'></div>
+              <div className='item'>
+                <div className='flex relative'>
+                  <img className='w-7 z-10' src={check} alt='check' />
+                  <div className='box'></div>
+                  <span className='z-10 ml-2'>CSS</span>
+                </div>
+                {/* <div className='scroll'></div> */}
               </div>
-              <div className='item'><i className="fa fa-check mr-3" aria-hidden="true"></i>JS
-                <div className='scroll'></div>
+              <div className='item'>
+                <div className='flex relative'>
+                  <img className='w-7 z-10' src={check} alt='check' />
+                  <div className='box'></div>
+                  <span className='z-10 ml-2'>SCSS</span>
+                </div>
+                {/* <div className='scroll'></div> */}
               </div>
-              <div className='item'><i className="fa fa-check mr-3" aria-hidden="true"></i>TypeScript
-                <div className='scroll'></div>
+              <div className='item'>
+                <div className='flex relative'>
+                  <img className='w-7 z-10' src={check} alt='check' />
+                  <div className='box'></div>
+                  <span className='z-10 ml-2'>Tailwind</span>
+                </div>
+                {/* <div className='scroll'></div> */}
               </div>
-              <div className='item'><i className="fa fa-check mr-3" aria-hidden="true"></i>Tailwind
-                <div className='scroll'></div>
+              <div className='item'>
+                <div className='flex relative'>
+                  <img className='w-7 z-10' src={check} alt='check' />
+                  <div className='box'></div>
+                  <span className='z-10 ml-2'>JS</span>
+                </div>
+                {/* <div className='scroll'></div> */}
               </div>
-              <div className='item'><i className="fa fa-check mr-3" aria-hidden="true"></i>ReactJs
-                <div className='scroll'></div>
+              <div className='item'>
+                <div className='flex relative'>
+                  <img className='w-7 z-10' src={check} alt='check' />
+                  <div className='box'></div>
+                  <span className='z-10 ml-2'>TS</span>
+                </div>
+                {/* <div className='scroll'></div> */}
               </div>
-              <div className='item'><i className="fa fa-check mr-3" aria-hidden="true"></i>Angular
-                <div className='scroll'></div>
+              <div className='item'>
+                <div className='flex relative'>
+                  <img className='w-7 z-10' src={check} alt='check' />
+                  <div className='box'></div>
+                  <span className='z-10 ml-2'>ReactJS</span>
+                </div>
+                {/* <div className='scroll'></div> */}
               </div>
-              <div className='item'><i className="fa fa-check mr-3" aria-hidden="true"></i>Scss
-                <div className='scroll'></div>
+              <div className='item'>
+                <div className='flex relative'>
+                  <img className='w-7 z-10' src={check} alt='check' />
+                  <div className='box'></div>
+                  <span className='z-10 ml-2'>Angular</span>
+                </div>
+                {/* <div className='scroll'></div> */}
               </div>
+
             </div>
           </div>
-          <div className='border-4 fe w-full mx-auto mt-3'>
-            <h5 className={isDarkMode ? 'text-white text-center p-4 font-mono text-[24px]' : 'text-black text-center p-4 font-mono text-[24px]'}>
+          <div className='border-4 fe w-full mx-auto mt-3 md:mr-11'>
+            <h5 className={isDarkMode ? 'text-white text-center p-4 font-mono text-[24px] px-[30%]' : 'text-black text-center p-4 font-mono text-[24px] px-[30%]'}>
               <div className='scroll-left'></div>
               Back end
               <div className='scroll-right'></div>
             </h5>
             <div className={isDarkMode ? 'text-white py-4 px-8 grid grid-rows-2 grid-flow-col gap-4 font-mono text-[20px]' : 'text-black py-4 px-8 grid grid-rows-2 grid-flow-col gap-4 font-mono text-[20px]'}>
-              <div className='item'><i className="fa fa-check mr-3" aria-hidden="true"></i>NodeJs
-                <div className='scroll'></div>
+              <div className='item'>
+                <div className='flex relative'>
+                  <img className='w-7 z-10' src={check} alt='check' />
+                  <div className='box'></div>
+                  <span className='z-10 ml-2'>NodeJS</span>
+                </div>
+                {/* <div className='scroll'></div> */}
               </div>
-              <div className='item'><i className="fa fa-check mr-3" aria-hidden="true"></i>Express
-                <div className='scroll'></div>
+              <div className='item'>
+                <div className='flex relative'>
+                  <img className='w-7 z-10' src={check} alt='check' />
+                  <div className='box'></div>
+                  <span className='z-10 ml-2'>Express</span>
+                </div>
+                {/* <div className='scroll'></div> */}
               </div>
-              <div className='item'><i className="fa fa-check mr-3" aria-hidden="true"></i>MongoDB
-                <div className='scroll'></div>
+              <div className='item'>
+                <div className='flex relative'>
+                  <img className='w-7 z-10' src={check} alt='check' />
+                  <div className='box'></div>
+                  <span className='z-10 ml-2'>MongoDB</span>
+                </div>
+                {/* <div className='scroll'></div> */}
               </div>
             </div>
           </div>
@@ -249,12 +311,14 @@ function App() {
       </div>
 
       {/* SKILL */}
-{/*       <div className='h-[5px] bg-black'></div>
+      {/*       <div className='h-[5px] bg-black'></div>
  */}      <div className={isDarkMode ? 'star min-h[1200px] pb-8 md:flex md:pt-11 md:justify-center' : 'bg-gray-300 min-h[1200px] pb-8 md:flex md:pt-11 md:justify-center'}>
-        <div className='md:w-[30%] md:px-6'>
+        <div className='md:w-[30%] md:px- relative'>
           <h2 className="text-center font-semibold font-mono text-[32px] pt-6">
-            <i className="fa fa-spotify mr-3 text-green-800" aria-hidden="true"></i>
+            <i className="fa fa-spotify mr-3 text-green-600" aria-hidden="true"></i>
             <span className={isDarkMode ? 'text-white md:text-[42px]' : 'text-black md:text-[42px]'}>Music</span></h2>
+          <img className='w-7 absolute top-[9%] right-[26%]' src={star} alt='star' />
+
           <p className={isDarkMode ? "p-4 text-center font-mono text-[18px] text-white md:text-[20px]" : "p-4 text-center font-mono text-[18px] md:text-[20px] text-gray-600"}>
             I love listening to music, it helps me relax and focus on my work.
             Here are some of my favorite songs.
@@ -266,17 +330,20 @@ function App() {
       </div>
 
       {/*Start Project */}
-      <div id='projects' className={isDarkMode ? 'star min-h-[600px]' : 'bg-[#d4d4d4] min-h-[600px]'}>
+      <div id='projects' className={isDarkMode ? 'star min-h-[600px] relative' : 'bg-[#d4d4d4] min-h-[600px] relative'}>
         <h2 className={isDarkMode ? "text-center font-semibold font-mono text-[32px] md:text-[48px] text-white pt-6" : "text-center md:text-[48px] font-semibold font-mono text-[32px] text-black pt-6"}>Projects</h2>
+        <img className='w-7 absolute top-[20px] right-[24%]' src={star} alt='star' />
+
         <div className='md:grid md:grid-cols-3 md:text-[20px] '>
           <div className={isDarkMode ? 'pt-8 p-4 m-4' : 'pt-8 text-black  p-4 m-4'}>
             <a href="https://movie-app-demo-kappa.vercel.app/" target='_blank'><img className='w-[400px] h-[200px] hover:opacity-80 hover:cursor-pointer' src={pj5} alt='project 5' /></a>
             <div className={'font-mono'}>
-              <span className='relative pl-4 pname md:hidden block'>Website</span>
+              <span className='relative pl-4 pname md:hidden'>Website</span>
               <span className='relative pl-4 line hidden md:block'>Website</span>
-              <h3 className='my-4 text-[18px]'>Movie Website</h3>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.of type and scrambled it to make a type specimen book. like Aldus PageMaker including versions of Lorem Ipsum.
-</p>
+              <h3 className='my-4 text-[18px]'>MovieTease </h3>
+              <p>
+                This website is a cinematic paradise for movie enthusiasts, offering an immersive experience with exclusive trailers. Explore the latest in entertainment across diverse film categories, including trending releases, movies, and TV series. The site's user-friendly search function makes it easy for users to find trailers for their favorite films.
+              </p>
               <a href='https://movie-app-demo-kappa.vercel.app/' target='_blank' className={isDarkMode ? 'p-4 mt-6 block w-[180px] bg-[#f47e23] hover:opacity-70' : 'p-4 mt-6 block w-[180px] bg-[#f47e23] hover:text-white hover:opacity-70'}>
                 <span><i className="fa fa-tv mr-3" aria-hidden="true"></i></span>
                 <span className='text-[20px]'>Live demo</span>
@@ -286,9 +353,10 @@ function App() {
           <div className={isDarkMode ? 'pt-8 p-4 m-4' : 'pt-8 xt-black  p-4 m-4'}>
             <a href="https://ecommerce-demo-mq4gleitw-luonglevan.vercel.app/" target="_blank"><img className='w-[400px] h-[200px] hover:opacity-80 hover:cursor-pointer' src={pj4} alt='project 4' /></a>
             <div className={'font-mono'}>
-              <span className='relative pl-4 pname md:hidden block'>Website</span>
-              <span className='relative pl-4 line hidden md:block'>Website</span>              <h3 className='my-4 text-[18px]'>Ecommerce Website</h3>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.of type and scrambled it to make a type specimen book. like Aldus PageMaker including versions of Lorem Ipsum.</p>
+              <span className='relative pl-4 pname md:hidden'>Website</span>
+              <span className='relative pl-4 line hidden md:block'>Website</span>
+              <h3 className='my-4 text-[18px]'>StyleHaven Mall</h3>
+              <p>This website is an ideal online shopping destination, offering a wide range of fashion products. Users can browse through clothing categories, view detailed images, and securely and conveniently make purchases, including options for registration and login.</p>
               <a href='https://ecommerce-demo-mq4gleitw-luonglevan.vercel.app/' target='_blank' className={isDarkMode ? 'p-4 mt-6 block w-[180px] bg-[#f47e23] hover:opacity-70' : 'p-4 mt-6 block w-[180px] bg-[#f47e23] hover:text-white hover:opacity-70'}>
                 <span><i className="fa fa-tv mr-3" aria-hidden="true"></i></span>
                 <span className='text-[20px]'>Live demo</span>
@@ -298,9 +366,10 @@ function App() {
           <div className={isDarkMode ? 'pt-8 p-4 m-4' : 'pt-8 text-black  p-4 m-4'}>
             <a href="https://weather-app-with-angular.vercel.app/" target='_blank'><img className='w-[400px] h-[200px] hover:opacity-80 hover:cursor-pointer' src={pj3} alt='project 3' /></a>
             <div className={'font-mono'}>
-              <span className='relative pl-4 pname md:hidden block'>Website</span>
-              <span className='relative pl-4 line hidden md:block'>Website</span>              <h3 className='my-4 text-[18px]'>Weather Website</h3>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.of type and scrambled it to make a type specimen book. like Aldus PageMaker including versions of Lorem Ipsum.</p>
+              <span className='relative pl-4 pname md:hidden'>Website</span>
+              <span className='relative pl-4 line hidden md:block'>Website</span>              
+              <h3 className='my-4 text-[18px]'>VNWeather Insight</h3>
+              <p>This website provides detailed weather information for each province and city in Vietnam. Users can quickly view essential details such as temperature, humidity, visibility, and wind speed.</p>
               <a href="https://weather-app-with-angular.vercel.app/" target='_blank' className={isDarkMode ? 'p-4 mt-6 block w-[180px] bg-[#f47e23] hover:opacity-70' : 'p-4 mt-6 block w-[180px] bg-[#f47e23] hover:text-white hover:opacity-70'}>
                 <span><i className="fa fa-tv mr-3" aria-hidden="true"></i></span>
                 <span className='text-[20px]'>Live demo</span>
@@ -310,9 +379,10 @@ function App() {
           <div className={isDarkMode ? 'pt-8 p-4 m-4' : 'pt-8 text-black  p-4 m-4'}>
             <a href="https://rest-countries-api-with-angular.vercel.app/" target='_blank'><img className='w-[400px] h-[200px] hover:opacity-80 hover:cursor-pointer' src={pj1} alt='project 1' /></a>
             <div className={'font-mono'}>
-              <span className='relative pl-4 pname md:hidden block'>Website</span>
-              <span className='relative pl-4 line hidden md:block'>Website</span>              <h3 className='my-4 text-[18px]'>Flag Country Website</h3>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.of type and scrambled it to make a type specimen book. like Aldus PageMaker including versions of Lorem Ipsum.</p>
+              <span className='relative pl-4 pname md:hidden'>Website</span>
+              <span className='relative pl-4 line hidden md:block'>Website</span>              
+              <h3 className='my-4 text-[18px]'>FlagAtlas Explorer</h3>
+              <p>This website provides information about countries worldwide, including their national flags and detailed country-specific information.</p>
               <a href='https://rest-countries-api-with-angular.vercel.app/' target='_blank' className={isDarkMode ? 'p-4 mt-6 block w-[180px] bg-[#f47e23] hover:opacity-70' : 'p-4 mt-6 block w-[180px] bg-[#f47e23] hover:text-white hover:opacity-70'}>
                 <span><i className="fa fa-tv mr-3" aria-hidden="true"></i></span>
                 <span className='text-[20px]'>Live demo</span>
@@ -322,9 +392,10 @@ function App() {
           <div className={isDarkMode ? 'pt-8 p-4 m-4' : 'pt-8 text-black  p-4 m-4'}>
             <a href="https://profile-with-angular-av6nw4guq-luonglevan.vercel.app/" target='_blank'><img className='w-[400px] h-[200px] hover:opacity-80 hover:cursor-pointer' src={pj2} alt='project 2' /></a>
             <div className={'font-mono'}>
-              <span className='relative pl-4 pname md:hidden block'>Website</span>
-              <span className='relative pl-4 line hidden md:block'>Website</span>              <h3 className='my-4 text-[18px]'>Generator Password Website</h3>
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.of type and scrambled it to make a type specimen book. like Aldus PageMaker including versions of Lorem Ipsum.</p>
+              <span className='relative pl-4 pname md:hidden'>Website</span>
+              <span className='relative pl-4 line hidden md:block'>Website</span>              
+              <h3 className='my-4 text-[18px]'>RandomGuard Key</h3>
+              <p>This website offers a simple tool to generate random and strong passwords. Users have the flexibility to customize the length of the password and include special characters, numbers, and alphabetic characters to create a secure password </p>
               <a href='https://profile-with-angular-av6nw4guq-luonglevan.vercel.app/' target='_blank' className={isDarkMode ? 'p-4 mt-6 block w-[180px] bg-[#f47e23] hover:opacity-70' : 'p-4 mt-6 block w-[180px] bg-[#f47e23] hover:text-white hover:opacity-70'}>
                 <span><i className="fa fa-tv mr-3" aria-hidden="true"></i></span>
                 <span className='text-[20px]'>Live demo</span>
@@ -336,16 +407,19 @@ function App() {
           <span><i className="fa fa-github mr-3" aria-hidden="true"></i></span>
           <a className={isDarkMode ? 'text-white' : 'text-black'} href='https://github.com/LuongLeVan?tab=repositories' target='_blank'>See more on github</a>
         </h4>
+
       </div>
 
       {/*End Project */}
 
       {/* Contact */}
-{/*       <div className={isDarkMode ? 'h-[3px] bg-white' : 'h-[5px] bg-black'}></div>
+      {/*       <div className={isDarkMode ? 'h-[3px] bg-white' : 'h-[5px] bg-black'}></div>
  */}
-      <div id='contact' className={isDarkMode ? 'star p-6 min-h-[300px] md:flex md:px-36' : 'bg-black test p-6 min-h-[300px] md:flex md:px-36'}>
+      <div id='contact' className={isDarkMode ? 'star p-6 min-h-[300px] relative md:flex md:px-36' : 'bg-black test p-6 min-h-[300px] relative md:flex md:px-36'}>
         <div className='md:w-[50%]'>
           <h2 className={isDarkMode ? "text-center font-semibold font-mono text-[32px] text-white pt-6 md:text-[48px]" : "text-center font-semibold font-mono text-[32px] text-white mb-4 md:text-[48px]"}>Contact Me</h2>
+          <img className='w-7 absolute top-[20px] right-[20%]' src={star} alt='star' />
+
           <p className='text-white text-center font-mono text-[14px] mb-4 md:px-11 md:text-[20px]'>
             I will read all emails. Send me any message you want and I'll get back to you.
 
@@ -356,6 +430,8 @@ function App() {
           <h5 className='text-center text-white text-[23px] mb-4 font-mono font-[600] md:hidden'>Send Me A Message</h5>
           <form action="https://formsubmit.co/levanluongk15@gmail.com" method="POST">
             <input className='block w-full p-3 outline-none font-mono border-4 text-black border-gray-500 md:w-full]' placeholder='Your Email' type="email" name="email" required />
+            <input className='block w-full p-3 outline-none font-mono border-4 text-black border-gray-500 md:w-full]' placeholder='Your Name' type="text" name="name" required />
+            
             <textarea className='block w-full mt-4 p-3 outline-none font-mono border-4 border-gray-500 text-black' type="text" name="name" placeholder='Write Here...' required> </textarea>
             <input className='my-4 p-4' type="checkbox" name="_captcha" value="false" /> <span className='font-mono text-white'>I'm not a robot</span>
             <input type="hidden" name="_subject" value="New submission!" />
@@ -371,7 +447,7 @@ function App() {
       {/* Contact */}
 
       {/* Footer */}
-      <div className={isDarkMode ? 'star text-white min-h-[150px] shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)] md:flex md:items-center md:flex-row-reverse	md:justify-between md:px-36' : 'bg-black text-white min-h-[150px] shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)] md:flex md:items-center md:flex-row-reverse	md:justify-between md:px-36' }>
+      <div className={isDarkMode ? 'star text-white min-h-[150px] shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)] md:flex md:items-center md:flex-row-reverse	md:justify-between md:px-36' : 'bg-black text-white min-h-[150px] shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)] md:flex md:items-center md:flex-row-reverse	md:justify-between md:px-36'}>
         <ul className='flex items-center justify-center pt-12 md:pt-[24px] text-[18px] font-mono'>
           <li className='hover:opacity-70'><a href='#about'>About Me</a></li>
           <li className='mx-6 hover:opacity-70'><a href='#tech'>Technologies</a></li>

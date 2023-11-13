@@ -2,7 +2,19 @@
     background-color: #f47e23;
     color: white;
   }
-
+.show-menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 400px;
+    transform: translateY(0%);
+    transition: transform 0.5s ease;
+}
+.hide{
+    transform: translateY(-100%);
+    transition: transform 0.5s ease;
+}
 .pname::after{
     
         content: "";
@@ -11,7 +23,7 @@
         background-color: white;
         position: absolute;
         top: 50%;
-        left: -34%;
+        left: -10%;
       
 }
 .line::after{
@@ -22,7 +34,7 @@
     background-color: white;
     position: absolute;
     top: 50%;
-    left: -3%;
+    left: -34%;
   
 }
   
@@ -42,7 +54,7 @@ li:hover .scroll{
 .scroll-left{
     display: block;
     width: 20%;
-    height: 3px;
+    height: 5px;
     background-color: #f47e23;
     transition: .5s width;
 }
@@ -53,7 +65,7 @@ li:hover .scroll{
 .scroll-right{
     display: block;
     width: 100%;
-    height: 3px;
+    height: 5px;
     background-color: #f47e23;
     transition: .5s width;
 }
@@ -89,4 +101,12 @@ background-color: black;}
 .show-message{
     transform: translateX(0);
     transition: .5s ease-in transform;
+}
+.box{
+    background-color: #f47e23;
+    border-radius: 50%;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 10%;
 }
