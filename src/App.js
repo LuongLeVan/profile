@@ -194,11 +194,11 @@ function App() {
               <a href='https://www.facebook.com/always.green.09' target='_blank' className='w-[40px] md:w-[40px] md:h-[40px] block hover:opacity-80 h-[40px] rounded-full text-center '>
                 <img src={facebook} alt="facebook" />
               </a>
-              <a href='https://www.intagram.com/toilaeddie/' target='_blank' className='w-[40px] md:w-[40px] md:h-[40px] block hover:opacity-80 h-[40px] rounded-full text-center  my-2'>
+              <a href='https://www.instagram.com/toilaeddie/' target='_blank' className='w-[40px] md:w-[40px] md:h-[40px] block hover:opacity-80 h-[40px] rounded-full text-center  my-2'>
                 <img src={instagram} alt="instagram" />
 
               </a>
-              <a href='https://github.csom/LuongLeVan' target='_blank' className='w-[40px] md:w-[40px] md:h-[40px] block hover:opacity-80 h-[40px] rounded-full text-center '>
+              <a href='https://github.com/LuongLeVan' target='_blank' className='w-[40px] md:w-[40px] md:h-[40px] block hover:opacity-80 h-[40px] rounded-full text-center '>
                 <img src={github} alt="github" />
 
               </a>
