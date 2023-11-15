@@ -35,14 +35,24 @@ function App() {
     });
   }
 
-  const handleSend = () => {
+  const handleSend = (e) => {
+    e.preventDefault();
     setIsShowMessage(true);
     setTimeout(() => {
-      setIsShowMessage(!setIsShowMenu);
+      setIsShowMessage(false);
+      window.location.reload();
     }, 4000);
-  }
+    }
 
   useEffect(() => {
+    const allSubMenu = document.querySelectorAll('.menu-mb');
+    for (let i = 0; i < allSubMenu.length; i++) {
+      const element = allSubMenu[i];
+      element.addEventListener('click' , () => {
+        setIsShowMenu(false);
+      })
+    }
+   
    /*  ScrollReveal().reveal('.scroll-reveal', {
       delay: 300,
       distance: '20px',
@@ -75,7 +85,7 @@ function App() {
     }
   }
   return (
-    <div className={isDarkMode ? 'bg-black text-white ' : ''}>
+    <div className={isDarkMode ? 'bg-black text-white body' : 'body'}>
       <Snowfall
         snowflakeCount={150}
 
@@ -93,13 +103,13 @@ function App() {
       {/* noti */}
       <div className={isShowMessage ? 'text-[16px] fixed message show-message top-4 rounded-[4px] right-0 z-50 bg-orange-500 px-6 py-4 text-white font-mono' : 'text-[16px] fixed message top-4 rounded-[4px] right-0 z-50 bg-orange-500 px-6 py-4 text-white font-mono '}>
         <i className='fa fa-check mr-3'></i>
-        Send Successful
+        Sent Successfully
         <i class="fa-solid fa-face-smile-wink ml-2"></i>
       </div>
       {/* noti */}
 
       {/* Menu Mobile */}
-      <div className={isShowMenu ? 'bg-black-rgba show-menu z-50 font-mono ' : 'bg-black-rgba fixed top-0 left-0 right-0 z-50 font-mono hide'}>
+      <div className={isShowMenu ? 'bg-black-rgba show-menu z-[999] font-mono menu ' : 'bg-black-rgba fixed top-0 left-0 right-0 z-[999] font-mono menu hide'}>
         <div className='font-mono flex justify-end items-center text-white'>
           <span className='font-[600] text-[14px] block w-full ml-[46%]'>Menu</span>
           <button className='p-4 hover:opacity-70 text-[20px]' onClick={() => setIsShowMenu(false)}><i className="fa fa-close" aria-hidden="true"></i></button>
@@ -108,24 +118,24 @@ function App() {
           <span className='border-b-4 border-[#f47e23]'>Luong</span>
         </h3>
         <ul className='text-center text-white font-medium text-[24px] mt-7'>
-          <li className='inline-block'>
+          <li className='inline-block menu-mb'>
             <a href='/'>Home</a>
             <div className='scroll'></div>
           </li>
           <div>
-            <li className='my-4 inline-block'>
+            <li className='my-4 inline-block menu-mb'>
               <a href='#about'>About Me</a>
               <div className='scroll'></div>
             </li>
           </div>
           <div>
-            <li className='inline-block'>
+            <li className='inline-block menu-mb'>
               <a href='#projects'>Projects</a>
               <div className='scroll'></div>
             </li>
           </div>
           <div>
-            <li className='my-4 inline-block'>
+            <li className='my-4 inline-block menu-mb'>
               <a href='#contact'>Contact Me</a>
               <div className='scroll'></div>
             </li>
@@ -137,7 +147,7 @@ function App() {
         <span><i className="fa fa-arrow-up" aria-hidden="true"></i></span>
       </button>
       {/* Header */}
-      <div className={isDarkMode ? 'flex items-center justify-between shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)] fixed z-20 top-0 left-0 px-11 md:py-4 md:px-36 right-0 star py-4' : 'flex items-center justify-between py-4 px-11 md:px-36 shadow-2xl bg-[#dedede] fixed z-20 top-0 left-0 right-0 scroll-reveal'}>
+      <div className={isDarkMode ? 'flex items-center justify-between shadow-[0_20px_50px_rgba(8,_112,_184,_0.7)] fixed z-20 top-0 left-0 px-11 md:py-4 md:px-36 right-0 star py-4 header' : 'flex items-center justify-between py-4 header px-11 md:px-36 shadow-2xl bg-[#dedede] fixed z-20 top-0 left-0 right-0 scroll-reveal'}>
         <div className="flex items-center">
           <span className="text-white rounded-[50%] px-4 py-2 bg-black">L</span>
           <p className={isDarkMode ? "font-[600] font-mono mx-2 text-white" : "font-[600] font-mono mx-2 text-black"}>Van Luong</p>
@@ -200,8 +210,8 @@ function App() {
           </div>
         </div>
         <div className='md:w-[50%] relative'>
-          <img src={arrow} className='w-[50px] arrow absolute mx-auto md:hidden z-10 md:w-[20px]' alt="arrow" />
-          <img src={snowman} className='w-[50px] md:hidden snowman absolute mx-auto z-10 md:w-[20px]' alt="snowman" />
+          <img src={arrow} className='w-[50px] md:w-[40px] md:top-[30%] arrow absolute mx-auto z-10 md:w-[20px]' alt="arrow" />
+          <img src={snowman} className='w-[50px] md:w-[70px] md:top-[25%] md:left-[10%] snowman absolute mx-auto z-10 md:w-[20px]' alt="snowman" />
           <p className='text-center font-medium font-mono p-6'>
             <h2 className="text-center font-semibold font-mono text-[32px] mt-[70px] hidden md:block">Van Luong</h2>
             <p className='md:text-[22px] mt-4'>
@@ -492,12 +502,12 @@ function App() {
         <div className='md:w-[30%] md:ml-[20%]'>
           <h5 className='text-center text-white text-[23px] mb-4 font-mono font-[600] md:hidden'>Send Me A Message</h5>
           <form action="https://formsubmit.co/levanluongk15@gmail.com" method="POST">
-            <input className='block w-full p-3 outline-none font-mono border-4 text-black border-gray-500 md:w-full]' placeholder='Your Email' type="email" name="email" required />
+            <input className='block w-full p-3 outline-none font-mono border-4 text-black border-gray-500 md:w-full]' placeholder='Your Email' type="email" name="email" />
 
-            <textarea className='block w-full mt-4 p-3 outline-none font-mono border-4 border-gray-500 text-black' type="text" name="name" placeholder='Write Here...' required></textarea>
+            <textarea className='block w-full mt-4 p-3 outline-none font-mono border-4 border-gray-500 text-black' type="text" name="name" placeholder='Write Here...'></textarea>
             <div className='flex items-center bg-white justify-between h-[74px] px-2 my-3 text-black'>
               <input className='my-4 p-4 check-box' type="checkbox" name="_captcha" value="false" onChange={() => handleCheckBox()} />
-              <span className='font-mono text-[15px] ml-[-18%]'>I'm not a robot</span>
+              <span className='font-mono text-[15px] ml-[-18%] md:ml-[-30%]'>I'm not a robot</span>
               <div>
                 <img className='w-8 text-center block ml-[36%]' src={capcha} alt='capcha' />
                 <p className='text-[10px] ml-[20%]'>reCAPTCHA</p>
@@ -509,10 +519,9 @@ function App() {
             </div>
             <input type="hidden" name="_subject" value="New submission!" />
             <input type="hidden" name="_blacklist" value="spammy pattern, banned term, phrase" />
-            <input type="hidden" name="_next" value="https://vanluong.vercel.app" />
-            <button onClick={handleSend} className='block w-full p-2 md:px-2 md:py-4 text-white font-mono text-[20px] bg-[#f47e23] submit' disabled type='submit'>
-              <span><i className="fa fa-send mr-3" aria-hidden="true"></i></span>
-              Send</button>
+            <input type="hidden" name="_next" value="https://vanluong.vercel.app/" />
+              <button className='block w-full p-2 md:px-2 md:py-4 text-white font-mono text-[20px] bg-[#f47e23] submit' onClick={handleSend}>
+              <i className="fa fa-send mr-3" aria-hidden="true"></i>Send</button>
           </form>
         </div>
 
