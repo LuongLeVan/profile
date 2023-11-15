@@ -35,7 +35,7 @@ function App() {
     });
   }
 
-  const handleSend = (e) => {
+  const handleSend =  async (e) => {
     e.preventDefault();
     setIsShowMessage(true);
     setTimeout(() => {
@@ -72,6 +72,7 @@ function App() {
       reset: true,
       
     }); */
+
   });
 
 
@@ -502,9 +503,9 @@ function App() {
         <div className='md:w-[30%] md:ml-[20%]'>
           <h5 className='text-center text-white text-[23px] mb-4 font-mono font-[600] md:hidden'>Send Me A Message</h5>
           <form action="https://formsubmit.co/levanluongk15@gmail.com" method="POST">
-            <input className='block w-full p-3 outline-none font-mono border-4 text-black border-gray-500 md:w-full]' placeholder='Your Email' type="email" name="email" />
+            <input className='block w-full p-3 outline-none font-mono border-4 text-black border-gray-500 md:w-full]' required placeholder='Your Email' type="email" name="email" />
 
-            <textarea className='block w-full mt-4 p-3 outline-none font-mono border-4 border-gray-500 text-black' type="text" name="name" placeholder='Write Here...'></textarea>
+            <textarea className='block w-full mt-4 p-3 outline-none font-mono border-4 border-gray-500 text-black' type="text" name="name" required placeholder='Write Here...'></textarea>
             <div className='flex items-center bg-white justify-between h-[74px] px-2 my-3 text-black'>
               <input className='my-4 p-4 check-box' type="checkbox" name="_captcha" value="false" onChange={() => handleCheckBox()} />
               <span className='font-mono text-[15px] ml-[-18%] md:ml-[-30%]'>I'm not a robot</span>
@@ -517,11 +518,12 @@ function App() {
                 </div>
               </div>
             </div>
-            <input type="hidden" name="_subject" value="New submission!" />
+            <input type="hidden" name="_subject" value="New Letter!" />
             <input type="hidden" name="_blacklist" value="spammy pattern, banned term, phrase" />
             <input type="hidden" name="_next" value="https://vanluong.vercel.app/" />
-              <button className='block w-full p-2 md:px-2 md:py-4 text-white font-mono text-[20px] bg-[#f47e23] submit' onClick={handleSend}>
-              <i className="fa fa-send mr-3" aria-hidden="true"></i>Send</button>
+              <button className='block w-full p-2 md:px-2 md:py-4 text-white font-mono text-[20px] bg-[#f47e23] submit' onClick={(e) => handleSend(e)} disabled>
+              <i className="fa fa-send mr-3" aria-hidden="true"></i>Send
+              </button>
           </form>
         </div>
 
