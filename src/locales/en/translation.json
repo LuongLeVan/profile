@@ -1,0 +1,43 @@
+{
+    "profile": {
+        "title": {
+            "name": "Van Luong",
+            "home": "Home",
+            "about": "About Me",
+            "project": "Projects",
+            "contact": "Contact Me",
+            "job": "with knowledge in web development i offer the best projects resulting in quality work.",
+            "skill1": "with a passion for building beautiful and functional",
+            "skill2": "Solid foundation in HTML, CSS, and JavaScript, with experience in",
+            "skill3": "Quick learner and team player, eager to take on new challenges.",
+            "skill_title": "My skill are",
+            "web":"Web applications",
+            "tech_title": "Technologies",
+            "music_title": "Music",
+            "music_content": "I love listening to music, it helps me relax and focus on my work. Here are some of my favorite songs.",
+            "pj1_title": "Movie Teaser",
+            "pj1_content": "This website is a cinematic paradise for movie enthusiasts, offering an immersive experience with exclusive trailers. Explore the latest in entertainment across diverse film categories, including trending releases, movies, and TV series. The site's user-friendly search function makes it easy for users to find trailers for their favorite films.Live demo",
+            "pj2_title": "StyleHaven Mall",
+            "pj2_content": "This website is an ideal online shopping destination, offering a wide range of fashion products. Users can browse through clothing categories, view detailed images, and securely and conveniently make purchases, including options for registration and login.",
+            "pj3_title": "VNWeather Insight",
+            "pj3_content": "This website provides detailed weather information for each province and city in Vietnam. Users can quickly view essential details such as temperature, humidity, visibility, and wind speed.",
+            "pj4_title": "FlagAtlas Explorer",
+            "pj4_content": "This website provides information about countries worldwide, including their national flags and detailed country-specific information.",
+            "pj5_title": "RandomGuard Key",
+            "pj5_content": "This website offers a simple tool to generate random and strong passwords. Users have the flexibility to customize the length of the password and include special characters, numbers, and alphabetic characters to create a secure password",
+            "demo": "Live demo",
+            "message": "Send me a message",
+            "req": "This field is required!",
+            "valid": "Invalid email format!",
+            "min": "Minimum 20 characters!",
+            "max": "Maximum 100 characters!",
+            "git_title": "See more on github",
+            "ur_email": "Your email",
+            "write": "Write here...",
+            "contact_content": "I will read all emails. Send me any message you want and I'll get back to you. I need your Email Address, and I'll get back to you in a few hours.",
+            "send": "Send",
+            "verify": "Verify",
+            "service": "All Rights Reserved By"
+        }
+    }
+}
