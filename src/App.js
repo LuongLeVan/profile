@@ -34,7 +34,6 @@ function App() {
   const [isShowMenu, setIsShowMenu] = useState(false);
   const [isVie, setIsVie] = useState(false);
   const [isShowMessage, setIsShowMessage] = useState(false);
-  const [time, setTime] = useState(moment().format('LTS'));
   const [t, i18n] = useTranslation("global");
   const schema = yup
     .object({
@@ -45,8 +44,8 @@ function App() {
       textarea: yup
         .string()
         .required(t("profile.title.req"))
-        .min(20, t("profile.title.valid"))
-        .max(100, t("profile.title.valid"))
+        .min(20, t("profile.title.min"))
+        .max(100, t("profile.title.max"))
     })
     .required();
 
@@ -430,7 +429,7 @@ function App() {
         {t("profile.title.about")}
         </h2>
         <img
-          className="w-7 absolute top-[5%] right-[23%] md:top-[24%] md:right-[33%]"
+          className="w-7 absolute top-[4%] right-[23%] md:top-[21%] md:right-[33%]"
           src={star}
           alt="star"
         />
@@ -672,7 +671,7 @@ function App() {
             </span>
           </h2>
           <img
-            className="w-7 absolute top-[9%] right-[26%]"
+            className="w-7 absolute top-[5%] right-[24%]"
             src={star}
             alt="star"
           />
@@ -753,7 +752,7 @@ function App() {
                 {t("profile.title.pj1_content")}
               </p>
               <a
-                href="https://ecommerce-demo-luonglevan.vercel.app/"
+                href="https://movie-app-demo-kappa.vercel.app/"
                 target="_blank"
                 className={
                   isDarkMode
@@ -780,7 +779,7 @@ function App() {
             }
           >
             <a
-              href="https://ecommerce-demo-mq4gleitw-luonglevan.vercel.app/"
+              href="https://ecommerce-demo-luonglevan.vercel.app/"
               target="_blank"
             >
               <img
@@ -799,7 +798,7 @@ function App() {
               {t("profile.title.pj2_content")}
               </p>
               <a
-                href="https://ecommerce-demo-mq4gleitw-luonglevan.vercel.app/"
+                href="https://ecommerce-demo-luonglevan.vercel.app/"
                 target="_blank"
                 className={
                   isDarkMode
